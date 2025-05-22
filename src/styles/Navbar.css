@@ -1,0 +1,60 @@
+.PlaymatchNav{
+    position: fixed;
+    width: 90vw;
+    padding: 1vw 2vw;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 20px;
+    align-items: center;
+    margin-left: 5vw;
+    margin-top: 2vw;
+    background-color: #1a1a1a;
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.3);
+}
+
+.NavLogo{
+    width: 2.5vw;
+}
+
+.HomeLogo{
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+.HomeLogo p{
+    font-family: "Mulish", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    font-style: normal;
+    color: white;
+}
+
+.HomeButtons{
+    display: flex;
+    gap: 2vw;
+}
+
+.HomeButtons button{
+    height: 2.5vw;
+    box-sizing: border-box;
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: "Mulish", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.HomeRegister{
+    color: white;
+    background-color: #4A3AFF;
+}
+
+.HomeLogin{
+    color: #1a1a1a;
+}

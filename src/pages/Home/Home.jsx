@@ -1,16 +1,14 @@
-import { useNavigate } from 'react-router-dom'
+
+import CalltoAction from '../../components/CallSection/CallSection'
+import Navbar from '../../components/Navbar/Navbar'
+import '../../styles/Home.css'
 
 export default function Home() {
-  const navigate = useNavigate()
-
-  const navigateAbout = () => {
-    navigate('/about')
-  }
 
   return (
     <div>
-      <h1>Página de Inicio</h1>
-      <button onClick={navigateAbout}>Ir a Acerca</button>
+      <Navbar/>
+      <CalltoAction/>
     </div>
   )
 }
