@@ -9,8 +9,9 @@
     align-items: center;
     margin-left: 5vw;
     margin-top: 2vw;
-    background-color: #1a1a1a;
+    background: linear-gradient(to right,#1a1a1ab5,#4d4d4db5,#4a3affc5);
     box-shadow: 0 3px 14px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
 }
 
 .NavLogo{
