@@ -1,11 +1,11 @@
 import { createHashRouter } from "react-router-dom";
-import Home from "../pages/Home/Home";
+import Landing from "../pages/Landing/Landing";
 import About from "../pages/About/About";
 
 const routes = createHashRouter([
     {
         path: "/",
-        element: <Home/>,
+        element: <Landing/>,
     },
     {
         path: "/about",

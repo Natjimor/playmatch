@@ -1,20 +1,25 @@
 .CalltoActSect{
     box-sizing: border-box;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
-    padding: 10vw 5vw;
+    padding: 3vw 5vw;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .CalltoActInfo{
-    width: 60vw;
+    width: 48vw;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 80px;
 }
 
 .CalltoActInfo h2{
-    font-family: "Mulish", sans-serif;
-    font-size: 35px;
-    font-weight: 800;
+    font-family: "Quicksand", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
     font-style: normal;
     color: white;
 }
@@ -22,7 +27,47 @@
 .CalltoActInfo p{
     font-family: "Mulish", sans-serif;
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 400;
     font-style: normal;
     color: white;
+}
+
+.CalltoActBtn{
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.CalltoActBtn button{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 3vw;
+    box-sizing: border-box;
+    padding: 6px 25px;
+    border-radius: 30px;
+    outline: none;
+    cursor: pointer;
+    font-family: "Mulish", sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.CallBtnWeb{
+    background-color: white;
+    border: 2px solid white;
+    color:#1a1a1a;
+}
+
+.CallBtnTel{
+    background-color: #24A1DE;
+    color: white;
+    border: 2px solid #24A1DE;
+}
+
+.CalltoActImg{
+    width: 40vw;
+    height: 100%;
+    filter: drop-shadow(4px 4px 30px #4a3aff80);
 }
