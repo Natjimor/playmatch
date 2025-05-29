@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { supabase } from "./supabaseClient"; 
 
 const Register = () => {
     const [form, setForm] = useState({
@@ -8,20 +9,42 @@ const Register = () => {
         confirmPassword: "",
     });
     const [error, setError] = useState("");
+    const [success, setSuccess] = useState("");
 
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
         setError("");
+        setSuccess(""); 
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (form.password !== form.confirmPassword) {
             setError("Las contraseñas no coinciden.");
             return;
         }
-        // Aquí iría la lógica para registrar el usuario
-        alert("Registro exitoso");
+
+        const { data, error } = await supabase.auth.signUp({
+            email: form.email,
+            password: form.password,
+            options: {
+                data: {
+                    username: form.username, // campo personalizado (puedes usarlo si tienes una tabla de perfiles)
+                }
+            }
+        });
+
+        if (error) {
+            setError(error.message);
+        } else {
+            setSuccess("Registro exitoso. Verifica tu correo electrónico.");
+            setForm({
+                username: "",
+                email: "",
+                password: "",
+                confirmPassword: "",
+            });
+        }
     };
 
     return (
@@ -73,7 +96,18 @@ const Register = () => {
                     />
                 </div>
                 {error && <div style={{ color: "red", marginBottom: 12 }}>{error}</div>}
-                <button type="submit" style={{ width: "100%", padding: 10, background: "#1976d2", color: "#fff", border: "none", borderRadius: 4 }}>
+                {success && <div style={{ color: "green", marginBottom: 12 }}>{success}</div>}
+                <button
+                    type="submit"
+                    style={{
+                        width: "100%",
+                        padding: 10,
+                        background: "#1976d2",
+                        color: "#fff",
+                        border: "none",
+                        borderRadius: 4,
+                    }}
+                >
                     Registrarse
                 </button>
             </form>
