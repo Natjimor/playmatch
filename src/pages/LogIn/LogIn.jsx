@@ -36,8 +36,8 @@ const LogIn = () => {
 
     return (
         <div id="iniciarSesion" style={{ margin: "40px auto", padding: 24, borderRadius: 8 }}>
-          <div id="img"><p>.</p></div>
-           <div id="form">
+          <div id="img1"><p>.</p></div>
+           <div id="form1">
             <h2 > Iniciar Sesión</h2>
             <form onSubmit={handleSubmit}>
                 <div style={{ marginBottom: 16 }}>

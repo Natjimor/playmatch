@@ -1,58 +1,78 @@
-body{
-    background-color: #0F0F10;
+body {
     font-family: "Quicksand", sans-serif;
-    color: rgb(238, 238, 238);
-}
-
-#resgistro{
-    width: 100%;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: row;
-    
-}
-
-input{
-    border-radius: 8px;
-    background-color: #222224;
-    border: 1px solid #bebebe;
-    margin-top: 4%;
-}
-
-button{
-    width: 20%;
-    padding: 2%;
-    background: #4A3AFF;
-    color: rgb(238, 238, 238);
-    border: none;
-    border-Radius: 8px;
-     font-family: "Mulish", sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    font-style: normal;
-    color: rgb(238, 238, 238);
-    margin-top: 8%;
+    color:white;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
     display: flex;
     justify-content: center;
+    align-items: center;
+    background-image: url(/public/262789bd253c7db121a4861c148f994a.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
-form{
+#resgistro {
+    width: 220%;
+    max-width: 1200px;
+    height: 650px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 30px;
+    overflow: hidden;
+    background-color: #0F0F10;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    flex: auto;
+    margin-left: 0%;
+}
+
+#img {
+    background-image: url("/public/pexels-bertellifotografia-28993124.jpg");
+    width: 50%;
+    height: 100%;
+    border-radius: 30px;
+    background-size: cover;
+    background-position: center;
+}
+
+#form {
+    width: 50%;
+    padding: 6% 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #0F0F10;
+}
+
+form {
     margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-#form{
-    width: 400px;
-    margin-left: 10%;
 
- 
+input {
+    border-radius: 8px;
+    border: 1px solid rgb(118, 118, 118);
+    padding: 10px;
+    font-size: 14px;
+    color: #0F0F10;
 }
 
-#img{
-    background-image: url("../../assets/1b02ec5d-953a-4b6c-88db-a540e31f365f_16-9-discover-aspect-ratio_default_0.jpg");
-    width: 55%;
-    height: 610px;
-    margin-top: -4%;
-    margin-left: -5%;
-    border-bottom-right-radius: 40px;
-    border-top-right-radius: 40px;
+button {
+    width: 100%;
+    padding: 10px;
+    background: #4A3AFF;
+    border: none;
+    border-radius: 10px;
+    font-family: "Mulish", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
 }

@@ -57,7 +57,7 @@ const Register = () => {
     return (
        
       <div id="resgistro" style={{ margin: "40px auto", padding: 24, }}>
-        <div id="img"><p>.</p></div>
+        <div id="img"></div>
         <div id="form">
             <h2>Registro</h2>
             <form onSubmit={handleSubmit}>

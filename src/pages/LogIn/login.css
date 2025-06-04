@@ -1,7 +1,6 @@
 body{
     background-color: #0F0F10;
     font-family: "Quicksand", sans-serif;
-    color: rgb(238, 238, 238);
 }
 
 #iniciarSesion{
@@ -12,11 +11,12 @@ body{
     
 }
 
-input{
+input {
     border-radius: 8px;
-    background-color: #222224;
-    border: 1px solid #bebebe;
-    margin-top: 4%;
+    border: 1px solid white;
+    padding: 10px;
+    font-size: 14px;
+    color:rgb(118, 118, 118);
 }
 
 button{
@@ -40,14 +40,14 @@ form{
     margin-top: 10%;
 }
 
-#form{
+#form1{
     width: 400px;
     margin-left: 10%;
 
  
 }
 
-#img{
+#img1{
     background-image: url("../../../src/assets/1b02ec5d-953a-4b6c-88db-a540e31f365f_16-9-discover-aspect-ratio_default_0.jpg");
     width: 55%;
     height: 610px;
