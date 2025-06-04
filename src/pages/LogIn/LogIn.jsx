@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { supabase } from "../Register/supabaseClient";
-
+import "./login.css"
 const LogIn = () => {
     const [form, setForm] = useState({
         email: "",
@@ -35,8 +35,10 @@ const LogIn = () => {
     };
 
     return (
-        <div style={{ maxWidth: 400, margin: "40px auto", padding: 24, border: "1px solid #ddd", borderRadius: 8 }}>
-            <h2>Iniciar Sesión</h2>
+        <div id="iniciarSesion" style={{ margin: "40px auto", padding: 24, borderRadius: 8 }}>
+          <div id="img"><p>.</p></div>
+           <div id="form">
+            <h2 > Iniciar Sesión</h2>
             <form onSubmit={handleSubmit}>
                 <div style={{ marginBottom: 16 }}>
                     <label>Email</label>
@@ -76,6 +78,7 @@ const LogIn = () => {
                     Iniciar Sesión
                 </button>
             </form>
+            </div>
         </div>
     );
 };

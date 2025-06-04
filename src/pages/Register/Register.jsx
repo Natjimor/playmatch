@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import { supabase } from "./supabaseClient"; 
+import { useNavigate } from 'react-router-dom'
+import "./Register.css"
 
 const Register = () => {
+    const navigate = useNavigate()
+    
+      const IniciarSesion = () => {
+        navigate('/login')
+      }
     const [form, setForm] = useState({
         username: "",
         email: "",
@@ -14,7 +21,7 @@ const Register = () => {
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
         setError("");
-        setSuccess(""); 
+        setSuccess("");
     };
 
     const handleSubmit = async (e) => {
@@ -29,7 +36,7 @@ const Register = () => {
             password: form.password,
             options: {
                 data: {
-                    username: form.username, 
+                    username: form.username, // campo personalizado (puedes usarlo si tienes una tabla de perfiles)
                 }
             }
         });
@@ -48,7 +55,10 @@ const Register = () => {
     };
 
     return (
-        <div style={{ maxWidth: 400, margin: "40px auto", padding: 24, border: "1px solid #ddd", borderRadius: 8 }}>
+       
+      <div id="resgistro" style={{ margin: "40px auto", padding: 24, }}>
+        <div id="img"><p>.</p></div>
+        <div id="form">
             <h2>Registro</h2>
             <form onSubmit={handleSubmit}>
                 <div style={{ marginBottom: 16 }}>
@@ -59,7 +69,7 @@ const Register = () => {
                         value={form.username}
                         onChange={handleChange}
                         required
-                        style={{ width: "100%", padding: 8, marginTop: 4 }}
+                        style={{ width: "100%", padding: 8}}
                     />
                 </div>
                 <div style={{ marginBottom: 16 }}>
@@ -70,7 +80,7 @@ const Register = () => {
                         value={form.email}
                         onChange={handleChange}
                         required
-                        style={{ width: "100%", padding: 8, marginTop: 4 }}
+                        style={{ width: "100%", padding: 8 }}
                     />
                 </div>
                 <div style={{ marginBottom: 16 }}>
@@ -81,7 +91,7 @@ const Register = () => {
                         value={form.password}
                         onChange={handleChange}
                         required
-                        style={{ width: "100%", padding: 8, marginTop: 4 }}
+                        style={{ width: "100%", padding: 8}}
                     />
                 </div>
                 <div style={{ marginBottom: 16 }}>
@@ -92,25 +102,19 @@ const Register = () => {
                         value={form.confirmPassword}
                         onChange={handleChange}
                         required
-                        style={{ width: "100%", padding: 8, marginTop: 4 }}
+                        style={{ width: "100%", padding: 8 }}
                     />
                 </div>
                 {error && <div style={{ color: "red", marginBottom: 12 }}>{error}</div>}
                 {success && <div style={{ color: "green", marginBottom: 12 }}>{success}</div>}
                 <button
                     type="submit"
-                    style={{
-                        width: "100%",
-                        padding: 10,
-                        background: "#1976d2",
-                        color: "#fff",
-                        border: "none",
-                        borderRadius: 4,
-                    }}
                 >
-                    Registrarse
+                    Next
                 </button>
+               <p>Ya tienes una cuenta? <a href="" onClick={IniciarSesion} >Login</a></p>
             </form>
+            </div>
         </div>
     );
 };
