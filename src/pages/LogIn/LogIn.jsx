@@ -35,10 +35,10 @@ const LogIn = () => {
     };
 
     return (
-        <div id="iniciarSesion" style={{ margin: "40px auto", padding: 24, borderRadius: 8 }}>
+        <div id="iniciarSesion" style={{ margin: "40px auto", padding: 24}}>
           <div id="img1"><p>.</p></div>
            <div id="form1">
-            <h2 > Iniciar Sesión</h2>
+            <h2 id="inicio"> Iniciar Sesión</h2>
             <form onSubmit={handleSubmit}>
                 <div style={{ marginBottom: 16 }}>
                     <label>Email</label>
@@ -66,14 +66,6 @@ const LogIn = () => {
                 {success && <div style={{ color: "green", marginBottom: 12 }}>{success}</div>}
                 <button
                     type="submit"
-                    style={{
-                        width: "100%",
-                        padding: 10,
-                        background: "#1976d2",
-                        color: "#fff",
-                        border: "none",
-                        borderRadius: 4,
-                    }}
                 >
                     Iniciar Sesión
                 </button>
