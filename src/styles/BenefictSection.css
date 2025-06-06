@@ -1,4 +1,4 @@
-.AboutSect {
+.BenefictSect {
     box-sizing: border-box;
     width: 100%;
     height: 100vh;
@@ -7,10 +7,10 @@
     align-items: center;
     background-color:#140151;
     justify-content: space-between;
-    gap: 50px;
+    gap: 75px;
 }
 
-.AboutSectImg{
+.BenefictSectImg{
     width: 40vw;
     height: 100%;
     box-sizing: border-box;
@@ -19,28 +19,28 @@
     flex-direction: column;
 }
 
-.AboutSect img{
+.BenefictSect img{
     width: 16vw;
     filter: drop-shadow(4px 4px 10px #4a3aff80);
 }
 
-#AboutImg1{
+#BenefictImg1{
     margin-top: 30px;
     margin-left: 310px;
 }
 
-#AboutImg2{
+#BenefictImg2{
     margin-top: 300px;
 }
 
-.AboutSectText{
+.BenefictSectText{
     width: 48vw;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.AboutSectText h4{
+.BenefictSectText h4{
     font-family: "Quicksand", sans-serif;
     font-size: 18px;
     font-weight: 500;
@@ -48,7 +48,7 @@
     color: rgba(255, 255, 255, 0.744);
 }
 
-.AboutSectText h2{
+.BenefictSectText h2{
     font-family: "Quicksand", sans-serif;
     font-size: 32px;
     font-weight: 700;
@@ -56,7 +56,7 @@
     color: white;
 }
 
-.AboutSectText p{
+.BenefictSectText p{
     font-family: "Mulish", sans-serif;
     font-size: 20px;
     font-weight: 400;
@@ -64,15 +64,45 @@
     color: white;
 }
 
-.AboutSectBenef{
-   display: grid;
-   grid-template-columns: repeat(2, 1fr);
-   grid-template-rows: repeat(2, auto);
-   gap: 20px; 
-   margin-top: 20px;
+.BenefictBenef{
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
-.AboutBenef{
-    width: 100%;
-    height: 5.5vw ;
+.BenefictBenef h1{
+    font-family: "Quicksand", sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    font-style: normal;
+    color: white;
+    width: 3vw;
+}
+
+.BenefictInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.BenefictInfo h3{
+    font-family: "Quicksand", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: normal;
+    color: white;  
+}
+
+.BenefictInfo p{
+    font-family: "Mulish", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    color: white; 
+}
+
+.BenefictSectBenef{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }

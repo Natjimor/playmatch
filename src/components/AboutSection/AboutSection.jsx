@@ -18,11 +18,11 @@ export default function AboutSect() {
         <div className='AboutSectText'>
             <h4>SOBRE NOSOTROS</h4>
             <h2>¡Jugar juntos nunca fue tan fácil!</h2>
-            <p>Somos un espacio que busca disminuir la fricción cuando un grupo quiere jugar junto. Entendemos lo difícil que puede ser coincidir en gustos, tiempos, plataformas y niveles de habilidad. Por eso creamos una solución que escuche a todos y ayude a encontrar ese juego ideal sin discusiones.</p>
+            <p>Somos una solución para grupos que quieren jugar juntos sin complicaciones recomendando el juego ideal según sus gustos y disponibilidad</p>
             <div className='AboutSectBenef'>
                 <div className='AboutBenef'
                 style={{
-                        backgroundImage: `url("https://kbkljkxypthbtafchvxz.supabase.co/storage/v1/object/sign/assets/Exp1.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzc2MmJjMmFkLTJkMDYtNDljOC05MmQ2LTNlZjUzNWVlMDAzOCJ9.eyJ1cmwiOiJhc3NldHMvRXhwMS5wbmciLCJpYXQiOjE3NDg1MzM2ODQsImV4cCI6MTc4MDA2OTY4NH0.2cq9JeEyOQ8noAIwqYPdgnRPkS4w1_fCbWWz_wJdBHw")`,
+                        backgroundImage: `url("https://kbkljkxypthbtafchvxz.supabase.co/storage/v1/object/sign/assets/Exp-1.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83NjJiYzJhZC0yZDA2LTQ5YzgtOTJkNi0zZWY1MzVlZTAwMzgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhc3NldHMvRXhwLTEucG5nIiwiaWF0IjoxNzQ5MDc1NTM5LCJleHAiOjE3ODA2MTE1Mzl9.AE2UzLuWH798RzCuNTt_er42-IDRSOyWfe6pM0juQjg")`,
                         backgroundSize: 'contain',
                         backgroundPosition: 'center',
                         backgroundRepeat: 'no-repeat',
@@ -30,7 +30,7 @@ export default function AboutSect() {
                 ></div>
                 <div className='AboutBenef'
                 style={{
-                        backgroundImage: `url("https://kbkljkxypthbtafchvxz.supabase.co/storage/v1/object/sign/assets/Exp2.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzc2MmJjMmFkLTJkMDYtNDljOC05MmQ2LTNlZjUzNWVlMDAzOCJ9.eyJ1cmwiOiJhc3NldHMvRXhwMi5wbmciLCJpYXQiOjE3NDg1MzM3MTIsImV4cCI6MTc1MTEyNTcxMn0.mgNhdNXKiBcd8UnsFWfUN45oABiimgrmLlM8TMM8Z2c")`,
+                        backgroundImage: `url("https://kbkljkxypthbtafchvxz.supabase.co/storage/v1/object/sign/assets/Exp-2.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83NjJiYzJhZC0yZDA2LTQ5YzgtOTJkNi0zZWY1MzVlZTAwMzgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhc3NldHMvRXhwLTIucG5nIiwiaWF0IjoxNzQ5MDc1NTU3LCJleHAiOjE3ODA2MTE1NTd9.LkvavanLusX7pBOCaKeuwM8De9yoZjRbnSJCRI79If0")`,
                         backgroundSize: 'contain',
                         backgroundPosition: 'center',
                         backgroundRepeat: 'no-repeat',
@@ -38,7 +38,7 @@ export default function AboutSect() {
                 ></div>
                 <div className='AboutBenef'
                 style={{
-                        backgroundImage: `url("https://kbkljkxypthbtafchvxz.supabase.co/storage/v1/object/sign/assets/Exp3.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzc2MmJjMmFkLTJkMDYtNDljOC05MmQ2LTNlZjUzNWVlMDAzOCJ9.eyJ1cmwiOiJhc3NldHMvRXhwMy5wbmciLCJpYXQiOjE3NDg1MzM3MzIsImV4cCI6MTc4MDA2OTczMn0.5fXTn2nskqXmzMoMtvQTHVKlaFRwxYTwt7fiq-HSGQs")`,
+                        backgroundImage: `url("https://kbkljkxypthbtafchvxz.supabase.co/storage/v1/object/sign/assets/Exp-3.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83NjJiYzJhZC0yZDA2LTQ5YzgtOTJkNi0zZWY1MzVlZTAwMzgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhc3NldHMvRXhwLTMucG5nIiwiaWF0IjoxNzQ5MDc1NTc2LCJleHAiOjE3ODA2MTE1NzZ9.ylVr4jjhJ-kwW5IrRo-4XvFsIsNoa9Iq4APnJf_NaGY")`,
                         backgroundSize: 'contain',
                         backgroundPosition: 'center',
                         backgroundRepeat: 'no-repeat',
@@ -46,7 +46,7 @@ export default function AboutSect() {
                 ></div>
                 <div className='AboutBenef'
                 style={{
-                        backgroundImage: `url("https://kbkljkxypthbtafchvxz.supabase.co/storage/v1/object/sign/assets/Exp4.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5Xzc2MmJjMmFkLTJkMDYtNDljOC05MmQ2LTNlZjUzNWVlMDAzOCJ9.eyJ1cmwiOiJhc3NldHMvRXhwNC5wbmciLCJpYXQiOjE3NDg1MzM3NTEsImV4cCI6MTc4MDA2OTc1MX0.y5MYgSBTptloQRC1L7lV_feI7lt_E1pM3vOxIYllBOs")`,
+                        backgroundImage: `url("https://kbkljkxypthbtafchvxz.supabase.co/storage/v1/object/sign/assets/Exp-4.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83NjJiYzJhZC0yZDA2LTQ5YzgtOTJkNi0zZWY1MzVlZTAwMzgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhc3NldHMvRXhwLTQucG5nIiwiaWF0IjoxNzQ5MDc1NTg3LCJleHAiOjE3ODA2MTE1ODd9.u6ffbtulHyHgouIFTrgJS9UKDfPAyQSecqHKvIcrRV4")`,
                         backgroundSize: 'contain',
                         backgroundPosition: 'center',
                         backgroundRepeat: 'no-repeat',
