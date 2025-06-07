@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+
+.NewRecommendations {
+    background-color: #160c34;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5vh 2vw;
+    height: 71vh;
+}
+
+.recommendationHistory {
+    display: flex;
+    flex-direction: column;
+}
+
+.recommendationHistory h3{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    color: rgba(255, 255, 255, 0.744);
+    margin-bottom: 2vh;
+}
+
+.ChatHistory p{
+    font-family: "Mulish", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: white;
+}
+
+.ChatHistory {
+  background-color: #140151;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 8px;
+  border-radius: 30px;
+  width: 230px;
+  margin: 0.5vh 0vw;
+  padding-left: 1.5vw;
+  text-align: left;         
+}
+
+.newBtnRecom {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: "Mulish", sans-serif;
+    font-weight: 700;
+    padding: 8px;
+    border-radius: 30px;
+    width: 230px;
+    margin: 0.5vh 0vw;
+    padding-left: 1.5vw;
+    align-items: center;
+    margin-bottom: 2vh;
+}
+
+.newBtnRecom img {
+    width: 30px;
+    height: 30px;
+    padding-right: 0.5vw;
+}
