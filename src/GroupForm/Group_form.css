@@ -1,0 +1,40 @@
+.body{
+    background-color:  #0F0F10;
+}
+
+#containerprincipal{
+    margin-top: 6%;
+}
+
+#titleprincipal{
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    font-size: 5.5vh;
+}
+
+
+#buttons{
+    display: flex;
+    justify-content: center; /* o space-between, si prefieres separados */
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+#back{
+    padding: 0.6rem 1.2rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    height: 50px;
+    margin-top: 0;
+}
+
+#next{
+    padding: 0.6rem 1.2rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    height: 50px;
+    margin-top: 0;
+}
