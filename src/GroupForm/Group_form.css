@@ -1,5 +1,5 @@
 .body{
-    background-color:  #0F0F10;
+   background-color:#140151;
 }
 
 #containerprincipal{
@@ -28,6 +28,8 @@
     transition: background-color 0.2s ease;
     height: 50px;
     margin-top: 0;
+    color: #140151;
+    background-color: white;
 }
 
 #next{

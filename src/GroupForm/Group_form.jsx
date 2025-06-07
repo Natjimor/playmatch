@@ -32,20 +32,37 @@ export default function GroupRecommendationForm({ onSubmit }) {
     }));
   };
 
-  const handleNext = () => {
-    if (step < steps.length - 1) {
-      setStep(step + 1);
-    } else {
-      guardarPreferenciasGrupo(form).then(res => {
-        if (res.success) {
-          console.log("Preferencias grupales guardadas exitosamente");
-          onSubmit?.(form); 
-        } else {
-          console.error("Error al guardar preferencias grupales:", res.error);
-        }
-      });
-    }
-  };
+const handleNext = () => {
+  // Validación por paso
+  if (currentStep === "groupSize" && !form.groupSize) {
+    alert("Por favor selecciona cuántas personas jugarán.");
+    return;
+  }
+
+  if (currentStep === "platforms" && form.platforms.length === 0) {
+    alert("Por favor selecciona al menos una plataforma.");
+    return;
+  }
+
+  if (currentStep === "sharedDevice" && !form.sharedDevice) {
+    alert("Por favor selecciona si compartirán un dispositivo.");
+    return;
+  }
+
+  if (step < steps.length - 1) {
+    setStep(step + 1);
+  } else {
+    guardarPreferenciasGrupo(form).then(res => {
+      if (res.success) {
+        console.log("Preferencias grupales guardadas exitosamente");
+        onSubmit?.(form); 
+      } else {
+        console.error("Error al guardar preferencias grupales:", res.error);
+      }
+    });
+  }
+};
+
 
   const handleBack = () => {
     if (step > 0) setStep(step - 1);

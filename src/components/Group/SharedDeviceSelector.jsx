@@ -1,4 +1,5 @@
 import React from "react";
+import "./SharedDeviceSelector.css";
 
 export default function SharedDeviceSelector({ value, onChange }) {
   const options = [
@@ -7,23 +8,25 @@ export default function SharedDeviceSelector({ value, onChange }) {
   ];
 
   return (
-    <div>
-      <h2 className="text-lg font-semibold mb-2">¿Compartirán un solo dispositivo?</h2>
-      <div className="flex flex-col gap-3">
-        {options.map(opt => (
-          <label key={opt.value} className="flex items-center gap-2">
+    <div id="shared-selector">
+      <h2 id="title3">¿Compartirán un solo dispositivo?</h2>
+      <div id="shared-options-container">
+        {options.map((opt, index) => (
+          <label key={opt.value} id={`shared-label-${index}`}>
             <input
               type="radio"
               name="sharedDevice"
+              id={`shared-input-${index}`}
               value={opt.value}
               checked={value === opt.value}
               onChange={() => onChange(opt.value)}
-              className="accent-blue-600"
             />
-            {opt.label}
+            <span id={`shared-circle-${index}`}></span>
+            <span id={`shared-text-${index}`}>{opt.label}</span>
           </label>
         ))}
       </div>
     </div>
   );
 }
+
