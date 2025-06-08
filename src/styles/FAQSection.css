@@ -1,0 +1,100 @@
+.FAQSection{
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  padding: 3vw 5vw;
+  display: flex;
+  align-items: center;
+  background-color:#140151;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.FAQSection h4{
+  font-family: "Quicksand", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  font-style: normal;
+  color: rgba(255, 255, 255, 0.744);
+}
+
+.FAQSection h2{
+  font-family: "Quicksand", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  font-style: normal;
+  color: white;
+}
+
+.FAQInfo{
+  display: flex;
+  flex-direction: column;
+  width: 45vw;
+  height: 100%;
+  justify-content: center;
+  gap: 20px;
+}
+
+.FAQList{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 58vh;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.FAQItem{
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  border: 3px solid white;
+  height: 8vh;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 30px 40px;
+  border-radius: 0px 20px;
+  gap: 15px;
+}
+
+.FAQButton{
+  display: flex;
+  justify-content: space-between;
+  border: none;
+  background-color: transparent;
+  font-family: "Mulish", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  font-style: normal;
+  color: white;
+  cursor: pointer;
+}
+
+.FAQSectImg{
+  width: 40vw;
+  height: 100%;
+  box-sizing: border-box;
+  filter: drop-shadow(4px 4px 30px #4a3aff80);
+  display: flex;
+  flex-direction: column;
+}
+
+.open{
+  display: flex;
+  flex-direction: column;
+  background-color:#4a3aff;
+  border: 3px solid #4a3aff;
+  justify-content: center;
+  height: 18vh;
+  box-sizing: border-box;
+  padding: 30px 40px;
+  border-radius: 0px 20px;
+}
+
+.open p{
+  font-family: "Mulish", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+}
