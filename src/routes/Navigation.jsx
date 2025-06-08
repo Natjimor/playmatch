@@ -1,6 +1,7 @@
 import { createHashRouter } from "react-router-dom";
 import Landing from "../pages/Landing/Landing";
-import About from "../pages/About/About";
+import LogIn from "../pages/LogIn/LogIn";
+import Register from "../pages/Register/Register";
 
 const routes = createHashRouter([
     {
@@ -8,8 +9,12 @@ const routes = createHashRouter([
         element: <Landing/>,
     },
     {
-        path: "/about",
-        element: <About/>,
+        path: "/login",
+        element: <LogIn/>,
+    },
+    {
+        path: "/register",
+        element: <Register/>,
     },
     
     ])
