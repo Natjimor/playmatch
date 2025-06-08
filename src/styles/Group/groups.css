@@ -10,10 +10,18 @@ body {
   background-position: center;
 }
 
+.groupsPage {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
 .firstSection {
   padding-top: 18vh;
   padding-left: 5vw;
-  padding-right: 6vw;
+  padding-right: 6.9vw;
+  flex-shrink: 0;
 
 }
 
@@ -21,8 +29,23 @@ body {
   display: flex;
   flex-direction: row;
   padding-left: 5vw;
-  padding-right: 6vw;
+  padding-right: 6.2vw;
+  flex: 1;
+  overflow: hidden;
+}
 
+.secondSection > .newRecommendations {
+  flex-shrink: 0;
+}
+
+.scrollContainer {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.scrollContainer::-webkit-scrollbar {
+  display: none;
 }
 
 .newRecommendations {
