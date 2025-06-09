@@ -22,7 +22,7 @@ const faqs = [
 ];
 
 export default function FAQSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+   const [openIndex, setOpenIndex] = useState(null);
 
   return (
     <section className="FAQSection">

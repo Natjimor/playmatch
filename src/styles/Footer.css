@@ -1,10 +1,10 @@
 .Footer {
-  background-color: #4a3afff2;
+  background-color: #1e1e1ef2;
   color: white;
   padding: 2vw 5vw;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
 }
 
 .FooterInfo{

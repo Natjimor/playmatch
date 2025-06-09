@@ -1,12 +1,11 @@
-
-import AboutSect from '../../components/AboutSection/AboutSection'
-import BenefictSect from '../../components/BenefictSection/BenefictSection'
-import CalltoAction from '../../components/CallSection/CallSection'
-import Navbar from '../../components/Navbar/Navbar'
-import PQSection from '../../components/FAQSection/FAQSection'
-import StepSect from '../../components/StepSection/StepSect'
-import TestimonySect from '../../components/TestimonySection/TestimonySection'
 import '../../styles/Landing.css'
+import Navbar from '../../components/Navbar/Navbar'
+import CalltoAction from '../../components/CallSection/CallSection'
+import AboutSect from '../../components/AboutSection/AboutSection'
+import StepSect from '../../components/StepSection/StepSect'
+import BenefictSect from '../../components/BenefictSection/BenefictSection'
+import TestimonySect from '../../components/TestimonySection/TestimonySection'
+import FAQSection from '../../components/FAQSection/FAQSection'
 import Footer from '../../components/Footer/Footer'
 
 export default function Landing() {
@@ -19,7 +18,7 @@ export default function Landing() {
       <StepSect/>
       <BenefictSect/>
       <TestimonySect/>
-      <PQSection/>
+      <FAQSection/>
       <Footer/>
     </div>
   )

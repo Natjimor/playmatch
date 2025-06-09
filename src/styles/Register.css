@@ -1,0 +1,16 @@
+.Register{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 2vw 5vw 2vw 2vw;
+    gap: 5vw;
+}
+.RegisterIMG{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    filter: drop-shadow(4px 4px 30px #4a3aff80);
+}

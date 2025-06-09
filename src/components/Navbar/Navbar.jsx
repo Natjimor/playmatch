@@ -1,6 +1,15 @@
 import '../../styles/Navbar.css'
+import { useNavigate } from 'react-router-dom'
 
 export default function Navbar() {
+  const navigate = useNavigate()
+
+  const navigateRegister = () => {
+    navigate('/register')
+  }
+  const navigateLogin = () => {
+    navigate('/login')
+  }
 
   return (
     <nav className='PlaymatchNav'>
@@ -9,8 +18,8 @@ export default function Navbar() {
             <p>Playmatch</p>
         </div>
         <div className='HomeButtons'>
-            <button className='HomeRegister'>Registrarse</button>
-            <button className='HomeLogin'>Iniciar sesión</button>
+            <button className='HomeRegister' onClick={navigateRegister}>Registrarse</button>
+            <button className='HomeLogin' onClick={navigateLogin}>Iniciar sesión</button>
         </div>
     </nav>
   )
