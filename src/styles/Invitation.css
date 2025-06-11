@@ -1,0 +1,131 @@
+.InvitationsSect{
+    width: 28vw;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 20px;
+    padding: 2vw 1.8vw;
+    background-color: #4a3affcf;
+    backdrop-filter: blur(2px);
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.InvitationsSect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://kbkljkxypthbtafchvxz.supabase.co/storage/v1/object/sign/assets/dotnoise-light-grey.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83NjJiYzJhZC0yZDA2LTQ5YzgtOTJkNi0zZWY1MzVlZTAwMzgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhc3NldHMvZG90bm9pc2UtbGlnaHQtZ3JleS5wbmciLCJpYXQiOjE3NDk2MjQ3OTMsImV4cCI6MTc4MTE2MDc5M30.5YaMCa-4YzyZiHOlcrtD9JWVREg-T9LWfodNUjo_9HU');
+    opacity: 0.4;
+    pointer-events: none;
+    border-radius: 20px;
+}
+
+.InvitationsContainer{
+    width: 100%;
+    height: 30vw;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 10px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.InvitationsContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.InvitationsSect h1{
+    font-family: "Quicksand", sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+    font-style: normal;
+    color: white;
+}
+
+.Invitation{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 5%;
+    gap: 12px;
+}
+
+.InvitationContent {
+    display: flex;
+    gap: 12px;
+}
+
+.Invitation img{
+    width: 2.7vw;
+    height: 2.7vw;
+    border-radius: 100px;
+}
+
+.Invitation p{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-family: "Mulish", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    color: #1E1E1E;
+}
+
+.InviIcon{
+    width: 2.7vw;
+    height: 2.7vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.InvitationButtons{
+    display: flex;
+    gap: 15px;
+}
+
+.InvitationButtons button{
+    width: 100%;
+    height: 2vw;
+    border: none;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-family: "Mulish", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.JoinButton{
+    background-color: #5244ecdc;
+    color: white;
+}
+
+.JoinButton:hover{
+    background-color: #4A3AFF;
+    color: white;
+}
+
+.RefuseButton{
+    background-color: #ec5a44c9;
+    color: white;
+}
+
+.RefuseButton:hover{
+    background-color: #e53f26;
+    color: white;
+}

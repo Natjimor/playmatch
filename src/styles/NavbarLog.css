@@ -1,0 +1,72 @@
+.PlaymatchNavLog{
+    width: 90vw;
+    padding: 1vw 2vw;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 20px;
+    align-items: center;
+    background: linear-gradient(to left,#d5d5d590,#4a3affd5);
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    z-index: 10;
+}
+
+.PlaymatchNavLog::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://kbkljkxypthbtafchvxz.supabase.co/storage/v1/object/sign/assets/dotnoise-light-grey.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83NjJiYzJhZC0yZDA2LTQ5YzgtOTJkNi0zZWY1MzVlZTAwMzgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhc3NldHMvZG90bm9pc2UtbGlnaHQtZ3JleS5wbmciLCJpYXQiOjE3NDk2MjQ3OTMsImV4cCI6MTc4MTE2MDc5M30.5YaMCa-4YzyZiHOlcrtD9JWVREg-T9LWfodNUjo_9HU');
+  opacity: 0.4;
+  pointer-events: none;
+  border-radius: 20px;
+}
+
+.NavLogLogo{
+    width: 2.5vw;
+}
+
+.HomeLogLogo{
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+.HomeLogLogo p{
+    font-family: "Quicksand", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    font-style: normal;
+    color: white;
+}
+
+.HomeLogButtons{
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+}
+
+.HomeLogLogin{
+    width: 2.5vw;
+    height: 2.5vw;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.NavLogNotification{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.NavLogIcon{
+    display: flex;
+    height: 2.5vw;
+    align-items: center;
+}

@@ -11,7 +11,7 @@ import Footer from '../../components/Footer/Footer'
 export default function Landing() {
 
   return (
-    <div>
+    <div className='Landing'>
       <Navbar/>
       <CalltoAction/>
       <AboutSect/>
