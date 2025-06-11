@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { supabase } from "./supabaseClient"; 
+import supabase from "../../services/supabase";
 import { useNavigate } from 'react-router-dom'
 import "./Register.css"
 
@@ -9,6 +9,11 @@ const Register = () => {
       const IniciarSesion = () => {
         navigate('/login')
       }
+
+      const formulario = () => {
+        navigate('/formindividual')
+      }
+
     const [form, setForm] = useState({
         username: "",
         email: "",
@@ -25,34 +30,59 @@ const Register = () => {
     };
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        if (form.password !== form.confirmPassword) {
-            setError("Las contraseñas no coinciden.");
-            return;
-        }
+    e.preventDefault();
 
-        const { data, error } = await supabase.auth.signUp({
-            email: form.email,
-            password: form.password,
-            options: {
-                data: {
-                    username: form.username, // campo personalizado (puedes usarlo si tienes una tabla de perfiles)
-                }
+    if (form.password !== form.confirmPassword) {
+        setError("Las contraseñas no coinciden.");
+        return;
+    }
+
+    // Paso 1: Registrar usuario
+    const { data, error } = await supabase.auth.signUp({
+        email: form.email,
+        password: form.password,
+        options: {
+            data: {
+                username: form.username,
             }
-        });
-
-        if (error) {
-            setError(error.message);
-        } else {
-            setSuccess("Registro exitoso. Verifica tu correo electrónico.");
-            setForm({
-                username: "",
-                email: "",
-                password: "",
-                confirmPassword: "",
-            });
         }
-    };
+    });
+
+    if (error) {
+        setError(error.message);
+        return;
+    }
+
+    const userId = data.user?.id; // El ID único del usuario
+    if (!userId) {
+        setError("No se pudo obtener el ID del usuario.");
+        return;
+    }
+
+    // Paso 2: Insertar en la tabla 'userss'
+    const { error: insertError } = await supabase.from('userss').insert({
+        id: userId,
+        email: form.email,
+        username: form.username
+    });
+
+    if (insertError) {
+        setError("Error al insertar en la tabla userss: " + insertError.message);
+        return;
+    }
+
+    setSuccess("Registro exitoso.");
+    setForm({
+        username: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+    });
+
+    // Paso 3: Navegar al formulario
+    navigate('/formindividual');
+};
+
 
     return (
        
@@ -107,11 +137,7 @@ const Register = () => {
                 </div>
                 {error && <div style={{ color: "red", marginBottom: 12 }}>{error}</div>}
                 {success && <div style={{ color: "green", marginBottom: 12 }}>{success}</div>}
-                <button
-                    type="submit"
-                >
-                    Next
-                </button>
+               <button type="submit">Next</button>
                <p>Ya tienes una cuenta? <a href="" onClick={IniciarSesion} >Login</a></p>
             </form>
             </div>

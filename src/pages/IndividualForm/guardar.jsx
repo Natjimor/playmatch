@@ -1,24 +1,24 @@
-import { supabase } from "../Register/supabaseClient";
+import supabase from "../../services/supabase";
+import mapFormToVector from "./mapFormToVector";
 
-export const guardarPreferenciasUsuario = async (form) => {
-  const { data: { user }, error: authError } = await supabase.auth.getUser();
+export const guardarPreferenciasUsuario = async (form, userId, username) => {
+  const vector = mapFormToVector(form);
+  
+  console.log("Vector que se enviará a Supabase:", {
+    id: userId,
+    username: username,
+    ...vector
+  });
 
-  if (authError || !user) {
-    console.error("Usuario no autenticado", authError);
-    return { success: false, error: "Usuario no autenticado" };
-  }
-
-  const { error } = await supabase.from("PreferenciasUsuario").upsert({
-    user_id: user.id,
-    genres: form.genres,
-    group_experience: form.groupExperience,
-    difficulty: form.difficulty,
-    playtime: form.playtime,
-    visual_story: form.visualStory
-  }, { onConflict: 'user_id' }); 
+  const { error } = await supabase.from("userss").upsert([
+    {
+      id: userId, // esta es la clave primaria en tu tabla
+      username: username,
+      ...vector,
+    },
+  ]);
 
   if (error) {
-    console.error("Error guardando preferencias:", error);
     return { success: false, error };
   }
 

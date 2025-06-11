@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { supabase } from "../Register/supabaseClient";
+import supabase from "../../services/supabase";
 import "./login.css"
 const LogIn = () => {
     const [form, setForm] = useState({
