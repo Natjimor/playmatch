@@ -1,7 +1,9 @@
 import "./generoyExperiencia.css"
 const GENRES = [
-  "Acción", "Aventura", "Estrategia", "RPG", "Terror",
-  "Simulación", "Carreras", "Puzzle", "Deportes", "Party / minijuegos", "No sé / me da igual"
+    "action", "indie", "adventure", "rpg", "strategy",
+    "shooter", "casual", "simulation", "puzzle", 
+    "arcade", "platformer","racing", "massively multiplayer", "sports",
+    "fighting", "family", "card", "educational"
 ];
 
 function GenreSelector({ selected, onChange }) {
