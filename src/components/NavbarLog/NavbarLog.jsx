@@ -5,7 +5,7 @@ import { FaRegBell, FaRegUser } from "react-icons/fa";
 export default function NavbarLog() {
   const navigate = useNavigate()
 
-  const navigateLogin = () => {
+  const navigateProfile = () => {
     navigate('/profile')
   }
 
@@ -17,10 +17,10 @@ export default function NavbarLog() {
         </div>
         
         <div className='HomeLogButtons'>
-          <div className='UserInformation'>
+          <div className='UserInformation' onClick={navigateProfile}>
             {/* <img src="https://www.wradio.com.co/resizer/v2/AWILDPLXHOBMS5WQAPP6YFZCFM.jpg?auth=26debeecbff253e7ab9ad7904a11c198973a82fadfb19d213956158070646a07&width=650&height=488&quality=70&smart=true" alt="Foto de perfil" className='HomeLogLogin' onClick={navigateLogin}/> */}
             <div className='NavLogIcon'>
-              <FaRegUser size={22} color="white" className='NavLogNotification' onClick={navigateLogin}/>
+              <FaRegUser size={22} color="white" className='NavLogNotification'/>
             </div>
             <p>Natjimor</p>
           </div>
