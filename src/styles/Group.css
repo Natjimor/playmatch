@@ -3,33 +3,20 @@
     border-radius: 20px;
     box-sizing: border-box;
     padding: 2vw 3vw;
-    background-color: rgba(255, 255, 255, 0.395);
+    background-color: rgba(255, 255, 255, 0.745);
     backdrop-filter: blur(2px);
-    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.3);
+    filter: drop-shadow(4px 4px 30px #4a3aff4d);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.GroupsSect::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('https://kbkljkxypthbtafchvxz.supabase.co/storage/v1/object/sign/assets/dotnoise-light-grey.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83NjJiYzJhZC0yZDA2LTQ5YzgtOTJkNi0zZWY1MzVlZTAwMzgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhc3NldHMvZG90bm9pc2UtbGlnaHQtZ3JleS5wbmciLCJpYXQiOjE3NDk2MjQ3OTMsImV4cCI6MTc4MTE2MDc5M30.5YaMCa-4YzyZiHOlcrtD9JWVREg-T9LWfodNUjo_9HU');
-  opacity: 0.4;
-  pointer-events: none;
-  border-radius: 20px;
-}
-
 .GroupsSect h1{
     font-family: "Quicksand", sans-serif;
-    font-size: 19px;
-    font-weight: 600;
+    font-size: 18.5px;
+    font-weight: 650;
     font-style: normal;
-    color: white;
+    color: #1E1E1E;
 }
 
 .JoinedGroupsContainer{
@@ -61,13 +48,12 @@
 }
 
 .AddGroup{
-    width: 14vw;
-    height: 98%;
+    width: 13vw;
+    height: 100%;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px dashed white;
-    background-color: rgba(255, 255, 255, 0.307);
+    background-color: rgba(255, 255, 255, 0.632);
     cursor: pointer;
 }

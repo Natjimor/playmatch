@@ -1,0 +1,182 @@
+.DialogOverlay {
+  background-color: hsla(254, 100%, 5%, 0.712);
+  position: fixed;
+  backdrop-filter: blur(4px);
+  inset: 0;
+  z-index: 10;
+}
+
+.DialogContent {
+  background-color: white;
+  border-radius: 12px;
+  padding: 3vw;
+  width: 35vw;
+  margin: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 12;
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  display: flex;
+  box-sizing: border-box;
+}
+
+.DialogTitle {
+  font-family: "Quicksand", sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  font-style: normal;
+  color: #1E1E1E;
+  text-align: center;
+}
+
+.DialogInput{
+  width: 100%;
+  height: 2.8vw;
+  border: 2px solid #D4D3D3;
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 5px 20px;
+  color: #666666;
+  font-family: "Mulish", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.DialogInput::placeholder {
+  color: #BEBEBE;
+}
+
+.DialogInput:focus {
+  border-color: #666666;
+  outline: none;
+}
+
+.DialogActions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.CancelBtn,
+.CreateBtn {
+  width: 30%;
+  height: 2.5vw;
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-family: "Mulish", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+}
+
+.CreateBtn {
+  background: linear-gradient(to right, #2513ee 50%, #4A3AFF 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  color: white;
+  font-weight: 400;
+  border: none;
+  cursor: pointer;
+  transition: all 0.6s ease;
+}
+
+.CreateBtn:hover {
+  background-position: left bottom;
+  color: white;
+  font-weight: 400;
+}
+
+.CancelBtn {
+  background: linear-gradient(to right, #1e1e1eaa 50%, #e4e3ea 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  color: #1E1E1E;
+  font-weight: 400;
+  border: none;
+  cursor: pointer;
+  transition: all 0.6s ease;
+}
+
+.CancelBtn:hover {
+  background-position: left bottom;
+  color: white;
+  font-weight: 400;
+}
+
+.usersContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.UserSearchResults {
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: transparent;
+  overflow-y: scroll;
+  border-radius: 10px;
+  gap: 5px;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.UserSearchResults::-webkit-scrollbar {
+  display: none;
+}
+
+.UserSearchResults li {
+  color: #1E1E1E;
+}
+
+.UserOption {
+  cursor: pointer;
+  padding: 5px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: normal;
+  color: #1E1E1E;
+  border-bottom: 2px solid #e4e4e4;
+}
+
+.SelectedUsers {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  gap: 8px;
+}
+
+.SelectedUser {
+  background-color: #e0e0ff;
+  padding: 5px 15px;
+  border-radius: 50px;
+  display: flex;
+  gap: 8px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.RemoveUserBtn {
+  background: none;
+  border: none;
+  color: #444;
+  font-weight: bold;
+  cursor: pointer;
+}

@@ -10,7 +10,7 @@ export default function InvitationSect() {
           <div className='Invitation'>
             <div className='InvitationContent'>
               <div className='InviIcon'>
-                <FaRegUser size={22} color="#1E1E1E"/>
+                <FaRegUser size={22} color="white"/>
               </div>
               {/* <img src="https://www.wradio.com.co/resizer/v2/AWILDPLXHOBMS5WQAPP6YFZCFM.jpg?auth=26debeecbff253e7ab9ad7904a11c198973a82fadfb19d213956158070646a07&width=650&height=488&quality=70&smart=true" alt="Foto de perfil" /> */}
               <p>Natalia te ha invitado a unirte a un grupo</p>
@@ -24,7 +24,7 @@ export default function InvitationSect() {
           <div className='Invitation'>
             <div className='InvitationContent'>
               <div className='InviIcon'>
-                <FaRegUser size={22} color="#1E1E1E"/>
+                <FaRegUser size={22} color="white"/>
               </div>
               {/* <img src="https://www.wradio.com.co/resizer/v2/AWILDPLXHOBMS5WQAPP6YFZCFM.jpg?auth=26debeecbff253e7ab9ad7904a11c198973a82fadfb19d213956158070646a07&width=650&height=488&quality=70&smart=true" alt="Foto de perfil" /> */}
               <p>Natalia te ha invitado a unirte a un grupo</p>
@@ -38,7 +38,7 @@ export default function InvitationSect() {
           <div className='Invitation'>
             <div className='InvitationContent'>
               <div className='InviIcon'>
-                <FaRegUser size={22} color="#1E1E1E"/>
+                <FaRegUser size={22} color="white"/>
               </div>
               {/* <img src="https://www.wradio.com.co/resizer/v2/AWILDPLXHOBMS5WQAPP6YFZCFM.jpg?auth=26debeecbff253e7ab9ad7904a11c198973a82fadfb19d213956158070646a07&width=650&height=488&quality=70&smart=true" alt="Foto de perfil" /> */}
               <p>Natalia te ha invitado a unirte a un grupo</p>
@@ -52,7 +52,7 @@ export default function InvitationSect() {
           <div className='Invitation'>
             <div className='InvitationContent'>
               <div className='InviIcon'>
-                <FaRegUser size={22} color="#1E1E1E"/>
+                <FaRegUser size={22} color="white"/>
               </div>
               {/* <img src="https://www.wradio.com.co/resizer/v2/AWILDPLXHOBMS5WQAPP6YFZCFM.jpg?auth=26debeecbff253e7ab9ad7904a11c198973a82fadfb19d213956158070646a07&width=650&height=488&quality=70&smart=true" alt="Foto de perfil" /> */}
               <p>Natalia te ha invitado a unirte a un grupo</p>
