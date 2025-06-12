@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import GroupSizeSelector from "../../components/Group/GroupSizeSelector";
 import PlatformSelector from "../../components/Group/PlatformSelector";
 import SharedDeviceSelector from "../../components/Group/SharedDeviceSelector";
 import { guardarPreferenciasGrupo } from "./guardarPreferenciasGrupo";
-import "./Group_form.css"
 
 const steps = ["groupSize", "platforms", "sharedDevice"];
 
@@ -71,9 +69,6 @@ const handleNext = () => {
     <div id="containerprincipal">
       <h1 id="titleprincipal">Preferencias del Grupo</h1>
 
-      {currentStep === "groupSize" && (
-        <GroupSizeSelector value={form.groupSize} onChange={val => handleChange("groupSize", val)} />
-      )}
       {currentStep === "platforms" && (
        <PlatformSelector selected={form.platforms} onChange={(newSelection) => handleChange("platforms", newSelection)}/>
       )}
