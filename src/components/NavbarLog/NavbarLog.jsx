@@ -1,9 +1,11 @@
 import '../../styles/NavbarLog.css'
 import { useNavigate } from 'react-router-dom'
 import { FaRegBell, FaRegUser } from "react-icons/fa";
+import { useUser } from '../../hooks/useUser';
 
 export default function NavbarLog() {
   const navigate = useNavigate()
+  const { userName } = useUser();
 
   const navigateProfile = () => {
     navigate('/profile')
@@ -22,7 +24,7 @@ export default function NavbarLog() {
             <div className='NavLogIcon'>
               <FaRegUser size={22} color="white" className='NavLogNotification'/>
             </div>
-            <p>Natjimor</p>
+            <p>{userName}</p>
           </div>
                 
           <div className='NavLogIcon'>
