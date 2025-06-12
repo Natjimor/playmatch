@@ -3,9 +3,9 @@
     border-radius: 20px;
     box-sizing: border-box;
     padding: 2vw 3vw;
-    background-color: rgba(255, 255, 255, 0.745);
+    background: linear-gradient(280deg ,#ffffff77,#ffffffb6);
     backdrop-filter: blur(2px);
-    filter: drop-shadow(4px 4px 30px #4a3aff4d);
+    filter: drop-shadow(4px 4px 30px #4a3aff6f);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -20,6 +20,7 @@
 }
 
 .JoinedGroupsContainer{
+    display: flex;
     width: 100%;
     height: 26vh;
     border-radius: 10px;
@@ -49,11 +50,30 @@
 
 .AddGroup{
     width: 13vw;
-    height: 100%;
+    height: 98%;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.632);
     cursor: pointer;
+    
+    border: 2.1px dashed #2e2e2e94;
+    background: linear-gradient(280deg ,#e2e2e28a,#e7e7e7);
+}
+
+.AddGroup:hover{
+    border: 2.1px dashed #4a3aff94;
+    background: linear-gradient(280deg ,#ffffff49,#ffffff9e);
+    
+}
+
+.icon-hover {
+    color: #2e2e2e94 !important;
+    transition: transform 0.5s, color 0.5s;
+    cursor: pointer;
+}
+
+.icon-hover:hover {
+    color: #4a3affc3 !important;
+    transform: scale(1.15);
 }

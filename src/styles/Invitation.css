@@ -4,9 +4,9 @@
     box-sizing: border-box;
     border-radius: 20px;
     padding: 2vw 1.8vw;
-    background-color: #4a3affdc;
+    background: linear-gradient(280deg ,#4a3aff8a,#4a3affdc);
     backdrop-filter: blur(2px);
-    filter: drop-shadow(4px 4px 30px #4a3aff4d);
+    filter: drop-shadow(4px 4px 30px #4a3aff6f);
     display: flex;
     flex-direction: column;
     gap: 20px;
