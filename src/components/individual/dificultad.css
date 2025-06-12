@@ -1,0 +1,120 @@
+#Individual-options{
+    display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  background-color: #25135e; 
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #3d2a80; 
+  max-width: 600px;
+  margin: auto;
+  margin-top: 3%;
+}
+
+
+#options-container-individual{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+
+}
+
+#options-container-individual label {
+     display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 1rem 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px;
+}
+
+#tittle1{
+ font-family: "Quicksand", sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: white;
+    text-align: center;
+    margin-top: 0;
+}
+
+label:hover {
+   background-color: #4913f9; 
+}
+
+#options-container-individual input[type="radio"] {
+  appearance: none;
+  height: 25px;
+  width: 25px;
+  border: 2px solid #9b5de5;
+  background-color: transparent;
+  transition: background-color 0.3s, border-color 0.3s;
+  margin-top: 1%;
+border-radius: 30px;
+}
+
+#options-container-individual input[type="radio"]:checked {
+   background-color: #a66cff;
+  box-shadow: inset 0 0 0 4px #2c1868;
+}
+
+
+#options-container-individual input[type="radio"]:checked::after {
+  font-size: 14px;
+  display: flex;
+  align-self: center;
+  justify-self: center;
+
+}
+
+input[type="range"] {
+  -webkit-appearance: none; 
+  width: 100%;
+  height: 8px;
+  background: #413074; 
+  border-radius: 5px;
+  outline: none;
+  margin-top: 1rem;
+  transition: background 0.3s;
+}
+
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #9b5de5; 
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 0 4px rgba(166, 108, 255, 0.6);
+  transition: background 0.3s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background: #b685ff;
+   box-shadow: 0 0 4px rgba(185, 139, 255, 0.747);
+}
+
+/* Firefox */
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #9b5de5;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 0 4px rgba(185, 139, 255, 0.6);
+}
+
+/* Track en Firefox */
+input[type="range"]::-moz-range-track {
+  background: #4e3b85;
+  height: 8px;
+  border-radius: 5px;
+}

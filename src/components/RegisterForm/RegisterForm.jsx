@@ -16,25 +16,32 @@ export default function RegisterForm() {
     const [errorMessage, setErrorMessage] = useState('');
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        setErrorMessage('');
+    e.preventDefault();
+    setErrorMessage('');
 
-        const {error } = await supabase.auth.signUp({
-            email,
-            password,
-            options: {
-                data: {
-                    full_name: fullName,
-                },
+    const { data, error } = await supabase.auth.signUp({
+        email,
+        password,
+        options: {
+            data: {
+                fullName: fullName,
             },
-        });
+        },
+    });
 
-        if (error) {
-            setErrorMessage(error.message);
-        } else {
-            navigate('/login');
+    if (error) {
+        setErrorMessage(error.message);
+    } else {
+        const userId = data.user?.id;
+        if (!userId) {
+            setErrorMessage("No se pudo obtener el ID del usuario.");
+            return;
         }
+
+        navigate('/forms', { state: { userId } });
+    }
     };
+
 
     return (
         <section className='RegisterSection'>
@@ -56,12 +63,12 @@ export default function RegisterForm() {
                         required
                     />
 
-                    <p>Nombre completo</p>
+                    <p>Nombre de usuario</p>
                     <input
                         type="text"
                         name="fullName"
                         className='inputRegister'
-                        placeholder="Ingresa tu nombre completo"
+                        placeholder="Ingresa tu nombre de usuario"
                         value={fullName}
                         onChange={(e) => setFullName(e.target.value)}
                         required
