@@ -4,7 +4,7 @@ import Login from "../pages/LogIn/LogIn";
 import Register from "../pages/Register/Register";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import Profile from "../pages/Profile/Profile";
-import RecommendationForm from "../pages/IndividualForm/individual_form";
+import RecommendationForm from "../pages/IndividualForm/IndividualForm";
 
 const routes = createHashRouter([
     {
