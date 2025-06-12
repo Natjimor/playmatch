@@ -1,9 +1,9 @@
 .GroupsSect{
-    width: 100%;
+    width: 90vw;
     border-radius: 20px;
     box-sizing: border-box;
     padding: 2vw 3vw;
-    background: linear-gradient(280deg ,#ffffff77,#ffffffb6);
+    background: linear-gradient(280deg ,#ffffff77,#ffffffc5);
     backdrop-filter: blur(2px);
     filter: drop-shadow(4px 4px 30px #4a3aff6f);
     display: flex;
@@ -21,10 +21,11 @@
 
 .JoinedGroupsContainer{
     display: flex;
-    width: 100%;
+    width: 60.5vw;
     height: 26vh;
     border-radius: 10px;
     overflow-x: scroll;
+    gap: 20px;
 
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -35,10 +36,12 @@
 }
 
 .RecommendedGroupsContainer{
-    width: 100%;
+    display: flex;
+    width: 60.5vw;
     height: 26vh;
     border-radius: 10px;
     overflow-x: scroll;
+    gap: 20px;
 
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -46,34 +49,4 @@
 
 .RecommendedGroupsContainer::-webkit-scrollbar {
     display: none;
-}
-
-.AddGroup{
-    width: 13vw;
-    height: 98%;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    
-    border: 2.1px dashed #2e2e2e94;
-    background: linear-gradient(280deg ,#e2e2e28a,#e7e7e7);
-}
-
-.AddGroup:hover{
-    border: 2.1px dashed #4a3aff94;
-    background: linear-gradient(280deg ,#ffffff49,#ffffff9e);
-    
-}
-
-.icon-hover {
-    color: #2e2e2e94 !important;
-    transition: transform 0.5s, color 0.5s;
-    cursor: pointer;
-}
-
-.icon-hover:hover {
-    color: #4a3affc3 !important;
-    transform: scale(1.15);
 }

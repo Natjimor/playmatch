@@ -1,0 +1,33 @@
+.AddGroup{
+    width: 13vw;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 2vw;
+    
+    border: 2.2px dashed #5a5a5a7b;
+    background-color: transparent;
+    transition: color 0.5s;
+}
+
+.AddGroup:hover{
+    border: 2.1px dashed #5a4cfb94;
+    background: linear-gradient(280deg ,#ffffff5a,#ffffffca);
+
+    
+    .icon-hover {
+    color: #4a3affc3 !important;
+    transform: scale(1.15);
+    }
+}
+
+.icon-hover {
+    color: #4a3affc5 !important;
+    transition: transform 0.5s, color 0.5s;
+    cursor: pointer;
+}
+

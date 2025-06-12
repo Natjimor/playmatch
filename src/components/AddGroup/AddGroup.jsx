@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { FaCirclePlus,FaCircleXmark} from "react-icons/fa6";
 import supabase from "../../services/supabase";
-import "../../styles/Group.css";
+import "../../styles/AddGroup.css";
 import "../../styles/ModalGroup.css";
 
 export default function AddGroup() {
@@ -106,7 +106,7 @@ export default function AddGroup() {
         <Dialog.Root open={isModalOpen} onOpenChange={setIsModalOpen}>
           <Dialog.Trigger asChild>
             <div className="AddGroup">
-              <FaCirclePlus size={45} color="#4a3affc3" className="icon-hover" />
+              <FaCirclePlus size={45} className="icon-hover" />
             </div>
           </Dialog.Trigger>
           <Dialog.Portal>
