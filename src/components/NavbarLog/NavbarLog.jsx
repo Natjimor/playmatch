@@ -17,13 +17,17 @@ export default function NavbarLog() {
         </div>
         
         <div className='HomeLogButtons'>
-                {/* <img src="https://www.wradio.com.co/resizer/v2/AWILDPLXHOBMS5WQAPP6YFZCFM.jpg?auth=26debeecbff253e7ab9ad7904a11c198973a82fadfb19d213956158070646a07&width=650&height=488&quality=70&smart=true" alt="Foto de perfil" className='HomeLogLogin' onClick={navigateLogin}/> */}
-                <div className='NavLogIcon'>
-                  <FaRegUser size={22} color="white" className='NavLogNotification' onClick={navigateLogin}/>
-                </div>
-                <div className='NavLogIcon'>
-                  <FaRegBell size={22} color="white" className='NavLogNotification'/>
-                </div>
+          <div className='UserInformation'>
+            {/* <img src="https://www.wradio.com.co/resizer/v2/AWILDPLXHOBMS5WQAPP6YFZCFM.jpg?auth=26debeecbff253e7ab9ad7904a11c198973a82fadfb19d213956158070646a07&width=650&height=488&quality=70&smart=true" alt="Foto de perfil" className='HomeLogLogin' onClick={navigateLogin}/> */}
+            <div className='NavLogIcon'>
+              <FaRegUser size={22} color="white" className='NavLogNotification' onClick={navigateLogin}/>
+            </div>
+            <p>Natjimor</p>
+          </div>
+                
+          <div className='NavLogIcon'>
+            <FaRegBell size={22} color="white" className='NavLogNotification'/>
+          </div>
         </div>
     </nav>
   )
