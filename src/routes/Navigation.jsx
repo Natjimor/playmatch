@@ -1,12 +1,12 @@
 import { createHashRouter } from "react-router-dom";
 import Landing from "../pages/Landing/Landing";
-import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import Profile from "../pages/Profile/Profile";
 import RecommendationForm from "../pages/IndividualForm/IndividualForm";
 import GroupRecommendationForm from "../pages/GroupForm/Group_form";
 import GroupsDetail from "../pages/Groups/Groups";
+import Login from "../pages/LogIn/LogIn";
 
 const routes = createHashRouter([
     {
