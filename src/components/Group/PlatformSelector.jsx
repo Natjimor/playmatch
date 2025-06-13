@@ -1,7 +1,9 @@
 import React from "react";
-import "./PlatformSelector.css"
+import "./PlatformSelector.css";
+
 function PlatformSelector({ selected, onChange }) {
-  const options = ["PC", "PlayStation 4", "PlayStation 5", "Xbox One","Xbox Serie S/X","Xbox 360", "Nintendo Switch", "Nintendo 3DS", "Nintendo 64", "IOS", "Android"];
+  const options = ["PC", "PlayStation", "Xbox", "Nintendo Switch", "Móvil"];
+
   const handleToggle = (platform) => {
     if (selected.includes(platform)) {
       onChange(selected.filter(p => p !== platform));
@@ -34,4 +36,4 @@ function PlatformSelector({ selected, onChange }) {
   );
 }
 
-export default PlatformSelector;
+export default  PlatformSelector

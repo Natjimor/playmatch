@@ -1,0 +1,59 @@
+.GroupsSect{
+    width: 100%;
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 2vw 3vw;
+    background-color: rgba(255, 255, 255, 0.745);
+    backdrop-filter: blur(2px);
+    filter: drop-shadow(4px 4px 30px #4a3aff4d);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.GroupsSect h1{
+    font-family: "Quicksand", sans-serif;
+    font-size: 18.5px;
+    font-weight: 650;
+    font-style: normal;
+    color: #1E1E1E;
+}
+
+.JoinedGroupsContainer{
+    width: 100%;
+    height: 26vh;
+    border-radius: 10px;
+    overflow-x: scroll;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.JoinedGroupsContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.RecommendedGroupsContainer{
+    width: 100%;
+    height: 26vh;
+    border-radius: 10px;
+    overflow-x: scroll;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.RecommendedGroupsContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.AddGroup{
+    width: 13vw;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.632);
+    cursor: pointer;
+}

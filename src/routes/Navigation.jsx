@@ -1,29 +1,37 @@
 import { createHashRouter } from "react-router-dom";
-import Home from "../pages/Home/Home";
-import About from "../pages/About/About";
+import Landing from "../pages/Landing/Landing";
+import Login from "../pages/LogIn/LogIn";
 import Register from "../pages/Register/Register";
-import LogIn from "../pages/login/login";
-import RecommendationForm from "../pages/forms/forms";
+import Dashboard from "../pages/Dashboard/Dashboard";
+import Profile from "../pages/Profile/Profile";
+import RecommendationForm from "../pages/IndividualForm/IndividualForm";
 
 const routes = createHashRouter([
     {
         path: "/",
-        element: <Home />,
+        element: <Landing/>,
     },
     {
-        path: "/about",
-        element: <About />,
+        path: "/login",
+        element: <Login/>,
     },
     {
-        path: '/register',
-        element: <Register />
+        path: "/register",
+        element: <Register/>,
     },
-    { path: "/login", 
-        element: <LogIn /> 
+    {
+        path: "/dashboard",
+        element: <Dashboard/>,
     },
+    {
+        path: "/profile",
+        element: <Profile/>,
+    },
+
     { path: "/forms", 
-        element: <RecommendationForm />
-     },
-])
+        element: <RecommendationForm/>
+    },
+    
+    ])
 
 export default routes;

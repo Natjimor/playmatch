@@ -1,0 +1,108 @@
+.BenefictSect {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    padding: 3vw 5vw;
+    display: flex;
+    align-items: center;
+    background-color:#140151;
+    justify-content: space-between;
+    gap: 75px;
+}
+
+.BenefictSectImg{
+    width: 40vw;
+    height: 100%;
+    box-sizing: border-box;
+    filter: drop-shadow(4px 4px 30px #4a3aff80);
+    display: flex;
+    flex-direction: column;
+}
+
+.BenefictSect img{
+    width: 16vw;
+    filter: drop-shadow(4px 4px 10px #4a3aff80);
+}
+
+#BenefictImg1{
+    margin-top: 30px;
+    margin-left: 310px;
+}
+
+#BenefictImg2{
+    margin-top: 300px;
+}
+
+.BenefictSectText{
+    width: 48vw;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.BenefictSectText h4{
+    font-family: "Quicksand", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    font-style: normal;
+    color: rgba(255, 255, 255, 0.744);
+}
+
+.BenefictSectText h2{
+    font-family: "Quicksand", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    font-style: normal;
+    color: white;
+}
+
+.BenefictSectText p{
+    font-family: "Mulish", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+}
+
+.BenefictBenef{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.BenefictBenef h1{
+    font-family: "Quicksand", sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    font-style: normal;
+    color: white;
+    width: 3vw;
+}
+
+.BenefictInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.BenefictInfo h3{
+    font-family: "Quicksand", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: normal;
+    color: white;  
+}
+
+.BenefictInfo p{
+    font-family: "Mulish", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    color: white; 
+}
+
+.BenefictSectBenef{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}

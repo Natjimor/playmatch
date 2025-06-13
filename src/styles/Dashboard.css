@@ -1,0 +1,33 @@
+.Dashboard {
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 2vw 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items:flex-start;
+  background-color:#140151;
+  justify-content: space-between;
+  gap: 2vw;
+}
+
+.DashboardInfo{
+  display: flex;
+  justify-content: space-between;
+  gap: 2vw;
+  width: 100%;
+  height: 100%;
+}
+
+.Dashboard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://kbkljkxypthbtafchvxz.supabase.co/storage/v1/object/sign/assets/dotnoise-light-grey.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83NjJiYzJhZC0yZDA2LTQ5YzgtOTJkNi0zZWY1MzVlZTAwMzgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhc3NldHMvZG90bm9pc2UtbGlnaHQtZ3JleS5wbmciLCJpYXQiOjE3NDk2MjQ3OTMsImV4cCI6MTc4MTE2MDc5M30.5YaMCa-4YzyZiHOlcrtD9JWVREg-T9LWfodNUjo_9HU');
+  opacity: 0.1;
+  pointer-events: none;
+  border-radius: 20px;
+}
