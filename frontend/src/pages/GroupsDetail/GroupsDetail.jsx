@@ -3,9 +3,19 @@ import InvitationSect from "../../components/InvitationsSection/InvitationSectio
 import NavbarLog from "../../components/NavbarLog/NavbarLog"
 import ParticipantsSect from "../../components/ParticipantsSection/ParticipantsSection"
 import RecommendedSect from "../../components/RecommendationSect/RecommendationSect"
+import { useLocation } from "react-router-dom";
 import "../../styles/GroupsDetail.css"
 
 export default function GroupsDetail() {
+    const location = useLocation();
+
+    const groupId = location.state?.groupId;
+    const participants = location.state?.participants;
+    const group = location.state?.fullGroupData;
+
+  if (!groupId || !participants) {
+    return <p>No se encontró información del grupo.</p>;
+  }
 
     return (
         <div className="GroupDetail"
@@ -18,7 +28,7 @@ export default function GroupsDetail() {
         >
         <NavbarLog/>
         <div className='GroupDetailInfo'>
-            <ParticipantsSect/>
+            <ParticipantsSect groupId={groupId}/>
             <RecommendedSect/>
         </div>
         </div>
