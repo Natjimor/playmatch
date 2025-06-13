@@ -36,6 +36,16 @@
     color: white;
 }
 
+.InvitationsContainer p{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-family: "Mulish", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(255, 255, 255);
+}
 .Invitation{
     display: flex;
     flex-direction: column;

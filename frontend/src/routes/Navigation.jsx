@@ -6,6 +6,8 @@ import Dashboard from "../pages/Dashboard/Dashboard";
 import Profile from "../pages/Profile/Profile";
 import RecommendationForm from "../pages/IndividualForm/IndividualForm";
 import { useUser } from "../hooks/useUser";
+import GroupRecommendationForm from "../pages/GroupForm/Group_form";
+import GroupsDetail from "../pages/GroupsDetail/GroupsDetail";
 
 function PrivateRoute({ children }) {
   const { isAuthenticated, loading } = useUser();
@@ -55,6 +57,23 @@ export default function Navigation() {
         element={
           <PrivateRoute>
             <RecommendationForm />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/groupform"
+        element={
+          <PrivateRoute>
+            <GroupRecommendationForm/>
+          </PrivateRoute>
+        }
+      />
+
+      <Route
+        path="/groups"
+        element={
+          <PrivateRoute>
+            <GroupsDetail/>
           </PrivateRoute>
         }
       />

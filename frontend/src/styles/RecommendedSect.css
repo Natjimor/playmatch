@@ -1,0 +1,43 @@
+.RecommendedSect{
+    width: 90vw;
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 2vw 3vw;
+    background: linear-gradient(280deg ,#ffffff77,#ffffffc5);
+    backdrop-filter: blur(2px);
+    filter: drop-shadow(4px 4px 30px #4a3aff6f);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.RecommendedSect h1{
+    font-family: "Quicksand", sans-serif;
+    font-size: 18.5px;
+    font-weight: 650;
+    font-style: normal;
+    color: #1E1E1E;
+}
+.NoRecommendations{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+}
+.NoRecommendations img{
+    width: 22vw;
+    filter: drop-shadow(4px 4px 30px #4a3aff45);
+}
+.NoRecommendations h3{
+    width: 34vw;
+    text-align: center;
+    font-family: "Quicksand", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    font-style: normal;
+    color: #1e1e1ed1;
+    margin-bottom: 20px;
+}

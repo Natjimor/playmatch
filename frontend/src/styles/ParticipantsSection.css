@@ -1,0 +1,127 @@
+.ParticipantsSect{
+    width: 28vw;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 20px;
+    padding: 2vw 1.8vw;
+    background: linear-gradient(280deg ,#4a3aff8a,#4a3affdc);
+    backdrop-filter: blur(2px);
+    filter: drop-shadow(4px 4px 30px #4a3aff6f);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.ParticipantsTittle{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.AddParticipant {
+    cursor: pointer;
+}
+
+.DeleteParticipant{
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.ParticipantsTittle h1{
+    font-family: "Quicksand", sans-serif;
+    font-size: 18.5px;
+    font-weight: 600;
+    font-style: normal;
+    color: white;
+}
+
+.ParticipantsContainer{
+    width: 100%;
+    height: 25vw;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 10px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.ParticipantsContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.Participant{
+    display: flex;
+    height: 8vh;
+    justify-content: center;
+    flex-direction: column;
+    background-color: transparent;
+    width: 100%;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 5%;
+    gap: 12px;
+    background-color: rgba(255, 255, 255, 0.208);
+}
+
+.ParticipantContent {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Participant img{
+    width: 2.7vw;
+    height: 2.7vw;
+    border-radius: 100px;
+}
+
+.Participant p{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-family: "Mulish", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+}
+
+.InviIcon{
+    width: 2.7vw;
+    height: 2.7vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.RecommendationButton{
+    display: flex;
+    width: 15vw;
+    height: 6vh;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    box-sizing: border-box;
+    padding: 2%;
+    background-color: white;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.RecommendationButton img{
+    width: 2vw;
+}
+
+.RecommendationButton p{
+    font-family: "Mulish", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    font-style: normal;
+    color: #1E1E1E;
+}

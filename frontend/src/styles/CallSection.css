@@ -42,7 +42,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    height: 3vw;
+    height: 3.3vw;
     box-sizing: border-box;
     padding: 6px 25px;
     border-radius: 30px;
@@ -60,10 +60,34 @@
     color:#1a1a1a;
 }
 
-.CallBtnTel{
-    background-color: #24A1DE;
-    color: white;
-    border: 2px solid #24A1DE;
+.CallBtnTel {
+  background: linear-gradient(to right, #008ed5 50%, #24A1DE 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.6s ease;
+}
+
+.CallBtnTel:hover {
+  background-position: left bottom;
+  color: white;
+}
+
+.CallBtnWeb {
+  background: linear-gradient(to right, #c5c5c5 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  color: #1E1E1E;
+  border: none;
+  cursor: pointer;
+  transition: all 0.6s ease;
+}
+
+.CallBtnWeb:hover {
+  background-position: left bottom;
+  color: #1E1E1E;
 }
 
 .CalltoActImg{
