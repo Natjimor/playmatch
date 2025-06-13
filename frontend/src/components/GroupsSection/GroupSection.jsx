@@ -1,12 +1,32 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "../../styles/Group.css";
 import AddGroup from "../AddGroup/AddGroup";
 import JoinedGroup from "../JoinedGroup/JoinedGroup";
 import RecommendedGroup from "../RecommendedGroup/RecommendedGroup";
+import { apiUtils } from "../../utils/apiUtils";
 
 export default function GroupSect() {
   const joinedRef = useRef(null);
   const recommendedRef = useRef(null);
+  const [recommendedGroups, setRecommendedGroups] = useState([]);
+
+  useEffect(() => {
+    const getRecommendedGroups = async () => {
+      try {
+        const response = await apiUtils({
+          url: "api/current_user/group_affinities",
+          method: "GET",
+        });
+        console.log(response);
+        setRecommendedGroups(response.groups);
+      } catch (error) {
+        console.error("Error al obtener grupos recomendados:", error);
+      }
+    };
+    getRecommendedGroups();
+  }, []);
+
+  console.log(recommendedGroups);
 
   useEffect(() => {
     const handleWheel = (e, container) => {
@@ -22,12 +42,17 @@ export default function GroupSect() {
     const joinedListener = (e) => handleWheel(e, joined);
     const recommendedListener = (e) => handleWheel(e, recommended);
 
-    if (joined) joined.addEventListener("wheel", joinedListener, { passive: false });
-    if (recommended) recommended.addEventListener("wheel", recommendedListener, { passive: false });
+    if (joined)
+      joined.addEventListener("wheel", joinedListener, { passive: false });
+    if (recommended)
+      recommended.addEventListener("wheel", recommendedListener, {
+        passive: false,
+      });
 
     return () => {
       if (joined) joined.removeEventListener("wheel", joinedListener);
-      if (recommended) recommended.removeEventListener("wheel", recommendedListener);
+      if (recommended)
+        recommended.removeEventListener("wheel", recommendedListener);
     };
   }, []);
 
@@ -44,11 +69,14 @@ export default function GroupSect() {
       </div>
       <h1>Recomendaciones de grupos</h1>
       <div className="RecommendedGroupsContainer" ref={recommendedRef}>
-        <RecommendedGroup/>
-        <RecommendedGroup/>
-        <RecommendedGroup/>
-        <RecommendedGroup/>
-        <RecommendedGroup/>
+        {recommendedGroups.map((group) => (
+          <RecommendedGroup
+            key={group.group_id}
+            groupNames={group.group_name}
+            memberSizes={group.users_count}
+            numberAffinities={Math.round(group.affinity_percentage).toString() + '%'}
+          />
+        ))}
       </div>
     </section>
   );

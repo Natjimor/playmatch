@@ -2,11 +2,12 @@ import '../../styles/NavbarLog.css'
 import { useNavigate } from 'react-router-dom'
 import { FaRegBell, FaRegUser } from "react-icons/fa";
 import { useUser } from '../../hooks/useUser';
+import { useAuth } from '../../context/AuthContext';
 
 export default function NavbarLog() {
   const navigate = useNavigate()
   const { userName } = useUser();
-
+const { signOut } = useAuth()
   const navigateProfile = () => {
     navigate('/profile')
   }
@@ -30,6 +31,7 @@ export default function NavbarLog() {
           <div className='NavLogIcon'>
             <FaRegBell size={22} color="white" className='NavLogNotification'/>
           </div>
+          <button onClick={signOut}>Cerrar sesión</button>  
         </div>
     </nav>
   )
