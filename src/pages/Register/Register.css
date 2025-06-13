@@ -1,0 +1,58 @@
+body{
+    background-color: #0F0F10;
+    font-family: "Quicksand", sans-serif;
+    color: rgb(238, 238, 238);
+}
+
+#resgistro{
+    width: 100%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+input{
+    border-radius: 8px;
+    background-color: #222224;
+    border: 1px solid #bebebe;
+    margin-top: 4%;
+}
+
+button{
+    width: 20%;
+    padding: 2%;
+    background: #4A3AFF;
+    color: rgb(238, 238, 238);
+    border: none;
+    border-Radius: 8px;
+     font-family: "Mulish", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    font-style: normal;
+    color: rgb(238, 238, 238);
+    margin-top: 8%;
+    display: flex;
+    justify-content: center;
+}
+
+form{
+    margin-top: 10%;
+}
+
+#form{
+    width: 400px;
+    margin-left: 10%;
+
+ 
+}
+
+#img{
+    background-image: url("../../assets/1b02ec5d-953a-4b6c-88db-a540e31f365f_16-9-discover-aspect-ratio_default_0.jpg");
+    width: 55%;
+    height: 610px;
+    margin-top: -4%;
+    margin-left: -5%;
+    border-bottom-right-radius: 40px;
+    border-top-right-radius: 40px;
+}
