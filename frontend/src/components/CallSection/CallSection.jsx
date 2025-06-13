@@ -1,7 +1,13 @@
+import { useNavigate } from 'react-router-dom';
 import '../../styles/CallSection.css'
 import { FaTelegramPlane } from "react-icons/fa";
 
 export default function CalltoAction() {
+
+  const navigate = useNavigate();
+    const irARegister = () => {
+        navigate('/register');
+    };
 
   return (
     <section className='CalltoActSect'
@@ -16,8 +22,8 @@ export default function CalltoAction() {
           <h2>¿Tu grupo de amigos nunca se decide a qué jugar? ¡Dejen que PlayMatch lo resuelva por ustedes!</h2>
           <p>Reúnanse, compartan sus gustos y reciban recomendaciones personalizadas en segundos.</p>
           <div className='CalltoActBtn'>
-            <button className='CallBtnWeb'>Comienza desde la web</button>
-            <button className='CallBtnTel'><FaTelegramPlane size={25} color="white" />Comienza con nuestro Bot</button>
+            <button className='CallBtnWeb'onClick={irARegister}>Comienza desde la web</button>
+            <button className='CallBtnTel' onClick={() => window.open("https://t.me/PlayMatch_bot")}><FaTelegramPlane size={25} color="white" />Comienza con nuestro Bot</button>
           </div>
         </div>
         <div className='CalltoActImg'
