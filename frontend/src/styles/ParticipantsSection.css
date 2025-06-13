@@ -1,4 +1,4 @@
-.InvitationsSect{
+.ParticipantsSect{
     width: 28vw;
     height: 100%;
     box-sizing: border-box;
@@ -12,23 +12,16 @@
     gap: 20px;
 }
 
-.InvitationsContainer{
-    width: 100%;
-    height: 30vw;
+.ParticipantsTittle{
     display: flex;
-    flex-direction: column;
-    gap: 15px;
-    border-radius: 10px;
-    overflow-y: scroll;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    justify-content: space-between;
 }
 
-.InvitationsContainer::-webkit-scrollbar {
-    display: none;
+.AddParticipant{
+    cursor: pointer;
 }
 
-.InvitationsSect h1{
+.ParticipantsTittle h1{
     font-family: "Quicksand", sans-serif;
     font-size: 18.5px;
     font-weight: 600;
@@ -36,17 +29,24 @@
     color: white;
 }
 
-.InvitationsContainer p{
+.ParticipantsContainer{
     width: 100%;
+    height: 27vw;
     display: flex;
-    align-items: center;
-    font-family: "Mulish", sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    font-style: normal;
-    color: rgb(255, 255, 255);
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 10px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    background-color: #4a3aff8a;
 }
-.Invitation{
+
+.ParticipantsContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.Participant{
     display: flex;
     flex-direction: column;
     background-color: transparent;

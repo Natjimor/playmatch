@@ -1,0 +1,20 @@
+.RecommendedSect{
+    width: 90vw;
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 2vw 3vw;
+    background: linear-gradient(280deg ,#ffffff77,#ffffffc5);
+    backdrop-filter: blur(2px);
+    filter: drop-shadow(4px 4px 30px #4a3aff6f);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.RecommendedSect h1{
+    font-family: "Quicksand", sans-serif;
+    font-size: 18.5px;
+    font-weight: 650;
+    font-style: normal;
+    color: #1E1E1E;
+}

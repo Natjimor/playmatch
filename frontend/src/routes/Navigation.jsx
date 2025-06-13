@@ -7,7 +7,7 @@ import Profile from "../pages/Profile/Profile";
 import RecommendationForm from "../pages/IndividualForm/IndividualForm";
 import { useUser } from "../hooks/useUser";
 import GroupRecommendationForm from "../pages/GroupForm/Group_form";
-import GroupsDetail from "../pages/Groups/Groups";
+import GroupsDetail from "../pages/GroupsDetail/GroupsDetail";
 
 function PrivateRoute({ children }) {
   const { isAuthenticated, loading } = useUser();
