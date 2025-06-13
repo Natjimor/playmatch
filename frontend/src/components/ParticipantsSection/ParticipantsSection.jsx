@@ -1,5 +1,6 @@
-import { FaRegUser, FaUserMinus, FaUserPlus } from "react-icons/fa";
+import { FaRegUser, FaUserPlus, FaMinus} from "react-icons/fa";
 import "../../styles/ParticipantsSection.css";
+import RecomendationButton from "../RecommendationButton/RecommendationButton";
 
 export default function ParticipantsSect() {
 
@@ -12,15 +13,63 @@ export default function ParticipantsSect() {
       
         <div className="ParticipantsContainer">
             <div className="Participant">
-              <div className="InvitationContent">
+              <div className="ParticipantContent">
                 <div className="InviIcon">
                   <FaRegUser size={22} color="white" />
                 </div>
                 <p> Natjimor</p>
-                <FaUserMinus/>
+                <FaMinus size={22} color="white" className="DeleteParticipant"/>
+              </div>
+            </div>
+
+            <div className="Participant">
+              <div className="ParticipantContent">
+                <div className="InviIcon">
+                  <FaRegUser size={22} color="white" />
+                </div>
+                <p> Natjimor</p>
+                <FaMinus size={22} color="white" className="DeleteParticipant"/>
+              </div>
+            </div>
+            <div className="Participant">
+              <div className="ParticipantContent">
+                <div className="InviIcon">
+                  <FaRegUser size={22} color="white" />
+                </div>
+                <p> Natjimor</p>
+                <FaMinus size={22} color="white" className="DeleteParticipant"/>
+              </div>
+            </div>
+            <div className="Participant">
+              <div className="ParticipantContent">
+                <div className="InviIcon">
+                  <FaRegUser size={22} color="white" />
+                </div>
+                <p> Natjimor</p>
+                <FaMinus size={22} color="white" className="DeleteParticipant"/>
+              </div>
+            </div>
+            <div className="Participant">
+              <div className="ParticipantContent">
+                <div className="InviIcon">
+                  <FaRegUser size={22} color="white" />
+                </div>
+                <p> Natjimor</p>
+                <FaMinus size={22} color="white" className="DeleteParticipant"/>
+              </div>
+            </div>
+            <div className="Participant">
+              <div className="ParticipantContent">
+                <div className="InviIcon">
+                  <FaRegUser size={22} color="white" />
+                </div>
+                <p> Natjimor</p>
+                <FaMinus size={22} color="white" className="DeleteParticipant"/>
               </div>
             </div>
         </div>
+
+        <RecomendationButton/>
     </section>
   );
 }
