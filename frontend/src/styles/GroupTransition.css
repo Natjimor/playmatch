@@ -1,0 +1,62 @@
+/* Estilos para la transición de grupos */
+@keyframes moveGroup {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+    box-shadow: 0 0 0 rgba(83, 68, 249, 0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(83, 68, 249, 0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 5px rgba(83, 68, 249, 0.3);
+  }
+}
+
+.group-container.group-joining {
+  animation: moveGroup 1.5s ease-out;
+}
+
+/* Spinner de carga */
+.group-loading {
+  position: relative;
+}
+
+.group-loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(83, 68, 249, 0.2);
+  backdrop-filter: blur(2px);
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.group-loading::before {
+  content: '';
+  position: absolute;
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
+  width: 30px;
+  height: 30px;
+  border: 3px solid #ebeaf5;
+  border-top: 3px solid #5344f9;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  z-index: 3;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

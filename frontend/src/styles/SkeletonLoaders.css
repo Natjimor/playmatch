@@ -1,0 +1,99 @@
+/* Base skeleton animation */
+@keyframes skeleton-loading {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: skeleton-loading 1.5s infinite;
+  border-radius: 4px;
+}
+
+/* Group Joined Skeleton */
+.GroupJoinedSkeleton {
+  min-width: 220px;
+  height: 140px;
+  background-color: #ebeaf5;
+  border-radius: 16px;
+  padding: 15px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.skeletonHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skeletonMemberCount {
+  width: 60px;
+  height: 14px;
+  composes: skeleton;
+  background: linear-gradient(90deg, #fff 25%, #5344f9 50%, #9d96c7 75%);
+  background-size: 200px 100%;
+  animation: skeleton-loading 1.5s infinite;
+  border-radius: 4px;
+}
+
+.skeletonIcon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  composes: skeleton;
+  background: linear-gradient(90deg, #fff 25%, #5344f9 50%, #9d96c7 75%);
+  background-size: 200px 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+.skeletonTitle {
+  width: 80%;
+  height: 22px;
+  margin: 15px 0;
+  composes: skeleton;
+  background: linear-gradient(90deg, #fff 25%, #5344f9 50%, #9d96c7 75%);
+  background-size: 200px 100%;
+  animation: skeleton-loading 1.5s infinite;
+  border-radius: 4px;
+}
+
+.skeletonCreator {
+  width: 70%;
+  height: 14px;
+  composes: skeleton;
+  background: linear-gradient(90deg, #fff 25%, #5344f9 50%, #9d96c7 75%);
+  background-size: 200px 100%;
+  animation: skeleton-loading 1.5s infinite;
+  border-radius: 4px;
+}
+
+/* Group Recommended Skeleton */
+.GroupRecommendedSkeleton {
+  min-width: 220px;
+  height: 140px;
+  background-color: #ebeaf5;
+  border-radius: 16px;
+  padding: 15px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.skeletonAffinityLabel {
+  width: 50%;
+  height: 14px;
+  composes: skeleton;
+  background: linear-gradient(90deg, #fff 25%, #5344f9 50%, #9d96c7 75%);
+  background-size: 200px 100%;
+  animation: skeleton-loading 1.5s infinite;
+  border-radius: 4px;
+}

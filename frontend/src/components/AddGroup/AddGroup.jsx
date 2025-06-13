@@ -105,9 +105,7 @@ export default function AddGroup() {
     <section>
         <Dialog.Root open={isModalOpen} onOpenChange={setIsModalOpen}>
           <Dialog.Trigger asChild>
-            <div className="AddGroup">
-              <FaCirclePlus size={45} className="icon-hover" />
-            </div>
+          <button className="CreateGroupButton">+ Crear</button>
           </Dialog.Trigger>
           <Dialog.Portal>
             <Dialog.Overlay className="DialogOverlay" />

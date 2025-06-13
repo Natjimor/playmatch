@@ -1,3 +1,20 @@
+.CreateGroupButton {
+    background-color: #5344f9;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-family: "Quicksand", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.CreateGroupButton:hover {
+    background-color: #4334d9;
+}
+
 .AddGroup{
     width: 13vw;
     height: 100%;

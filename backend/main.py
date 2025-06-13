@@ -29,6 +29,11 @@ class UserLogin(BaseModel):
     username: str
     user_id: str
 
+class JoinGroupRequest(BaseModel):
+    user_id: str
+    username: str
+    group_id: str
+
 class UserAuthInfo(BaseModel):
     username: str
     user_id: str
@@ -376,10 +381,37 @@ async def get_current_user_group_affinities(limit: int = Query(default=10, le=50
         # Filtrar grupos vacíos - sólo considerar grupos con al menos un usuario
         non_empty_groups = [group for group in all_groups if group.get("group_users") and len(group.get("group_users", [])) > 0]
         
+        # Filtrar los grupos donde el usuario ya es miembro
+        username = current_user.username
+        # Considerando que el username podría ser distinto al almacenado en el grupo
+        # Obtenemos posibles variantes del nombre de usuario
+        user_data = await get_user_vector(current_user_id)
+        possible_usernames = [
+            username,
+            user_data.get('username', ''),
+            current_user_id  # Por si acaso el ID está almacenado directamente
+        ]
+        
+        # Filtrar grupos donde el usuario ya es miembro
+        available_groups = []
+        for group in non_empty_groups:
+            group_users = group.get("group_users", [])
+            
+            # Verificar si alguna variante del username aparece en el grupo
+            is_member = False
+            for potential_name in possible_usernames:
+                if potential_name and potential_name in group_users:
+                    is_member = True
+                    break
+            
+            # Solo incluir el grupo si el usuario NO es miembro
+            if not is_member:
+                available_groups.append(group)
+        
         # 4. Calcular la afinidad (similitud) con cada grupo
         groups_with_affinity = []
         
-        for group in non_empty_groups:
+        for group in available_groups:
             group_id = group.get('group_id')
             
             try:
@@ -424,6 +456,212 @@ async def get_current_user_group_affinities(limit: int = Query(default=10, le=50
     except Exception as e:
         print(f"Error al calcular afinidades con grupos: {e}")
         raise HTTPException(status_code=500, detail=f"Error al calcular afinidades con grupos: {str(e)}")
+
+@app.post("/api/group/join")
+async def join_group(request: JoinGroupRequest):
+    """Añadir un usuario a un grupo específico"""
+    try:
+        # 1. Verificar que el usuario existe
+        if not request.user_id or not request.username:
+            raise HTTPException(status_code=400, detail="Se requiere ID y nombre de usuario")
+            
+        # 2. Verificar que el grupo existe
+        try:
+            if not supabase:
+                raise HTTPException(status_code=500, detail="No hay conexión con Supabase")
+                
+            group_response = supabase.table('groups').select('*').eq('group_id', request.group_id).execute()
+            
+            if not group_response.data or len(group_response.data) == 0:
+                raise HTTPException(status_code=404, detail=f"No se encontró el grupo con ID {request.group_id}")
+                
+            group = group_response.data[0]
+            
+            # 3. Verificar si el usuario ya está en el grupo
+            current_users = group.get('group_users', [])
+            
+            # Comprobar si el usuario ya está en el grupo (por nombre de usuario)
+            if request.username in current_users:
+                return {"message": "El usuario ya es miembro de este grupo", "status": "already_member"}
+            
+            # 4. Añadir el usuario al grupo (solo el nombre de usuario para mantener consistencia)
+            updated_users = current_users + [request.username] if current_users else [request.username]
+            
+            # 5. Recalcular el vector promedio del grupo con el nuevo usuario
+            try:
+                # Obtener el vector del nuevo usuario
+                user_vector_result = await get_user_vector(request.user_id)
+                new_user_vector = user_vector_result.get('original_vector')
+                
+                # Obtener el vector promedio actual del grupo
+                current_avg_vector = group.get('avg_vector', [])
+                
+                # Si no hay vector promedio o es la primera vez, usar el vector del usuario
+                if not current_avg_vector or len(current_users) == 0:
+                    new_avg_vector = new_user_vector
+                else:
+                    # Calcular el nuevo vector promedio
+                    # Fórmula: ((promedio_actual * num_usuarios) + nuevo_vector) / (num_usuarios + 1)
+                    num_users = len(current_users)
+                    
+                    # Convertir a numpy para cálculos más eficientes
+                    current_avg_np = np.array(current_avg_vector)
+                    new_user_np = np.array(new_user_vector)
+                    
+                    # Calcular el nuevo promedio
+                    new_avg_np = ((current_avg_np * num_users) + new_user_np) / (num_users + 1)
+                    new_avg_vector = new_avg_np.tolist()
+                    
+                    # Normalizar el vector promedio
+                    new_avg_vector_normalized = normalize_vector(new_avg_vector)
+                
+                # 6. Actualizar el grupo en Supabase con los usuarios y el nuevo vector promedio normalizado
+                update_data = {
+                    "group_users": updated_users,
+                    "avg_vector": new_avg_vector_normalized,
+                    "group_size": len(updated_users)
+                }
+                
+                update_response = supabase.table('groups').update(update_data).eq('group_id', request.group_id).execute()
+                
+                if not update_response.data:
+                    raise HTTPException(status_code=500, detail="Error al actualizar el grupo")
+                
+                return {
+                    "message": f"Usuario {request.username} añadido al grupo exitosamente",
+                    "status": "success",
+                    "group": update_response.data[0],
+                    "vector_updated": True,
+                    "updated_group_users": updated_users
+                }
+                
+            except Exception as e:
+                # Si hay un error al recalcular el vector, al menos actualizamos los usuarios
+                print(f"Error al recalcular el vector del grupo: {e}")
+                
+                # Actualizar solo los usuarios
+                update_response = supabase.table('groups').update({"group_users": updated_users}).eq('group_id', request.group_id).execute()
+                
+                if not update_response.data:
+                    raise HTTPException(status_code=500, detail="Error al actualizar el grupo")
+                
+                return {
+                    "message": f"Usuario {request.username} añadido al grupo exitosamente (sin actualizar vector)",
+                    "status": "success",
+                    "group": update_response.data[0],
+                    "vector_updated": False,
+                    "updated_group_users": updated_users
+                }
+            
+        except Exception as e:
+            if isinstance(e, HTTPException):
+                raise e
+            raise HTTPException(status_code=500, detail=f"Error al unirse al grupo: {str(e)}")
+            
+    except Exception as e:
+        if isinstance(e, HTTPException):
+            raise e
+        raise HTTPException(status_code=500, detail=f"Error en el servidor: {str(e)}")
+
+
+        current_user = logged_users[current_user_id]
+        
+        # 2. Obtener todos los grupos desde Supabase
+        if not supabase:
+            raise HTTPException(status_code=500, detail="Error en la conexión con Supabase")
+            
+        groups_response = supabase.table('groups').select('*').execute()
+        all_groups = groups_response.data if groups_response.data else []
+        
+        # 3. Obtener posibles variantes del nombre de usuario
+        username = current_user.username
+        user_data = await get_user_vector(current_user_id)
+        possible_usernames = [
+            username,
+            user_data.get('username', ''),
+            current_user_id
+        ]
+        
+        # 4. Filtrar grupos donde el usuario ya es miembro
+        joined_groups = []
+        for group in all_groups:
+            group_users = group.get("group_users", [])
+            
+            # Verificar si alguna variante del username aparece en el grupo
+            is_member = False
+            for potential_name in possible_usernames:
+                if potential_name and potential_name in group_users:
+                    is_member = True
+                    break
+            
+            # Solo incluir el grupo si el usuario ES miembro
+            if is_member:
+                joined_groups.append(group)
+        
+        # 5. Devolver los grupos a los que pertenece
+        return {
+            "joined_groups": joined_groups,
+            "count": len(joined_groups)
+        }
+        
+    except Exception as e:
+        if isinstance(e, HTTPException):
+            raise e
+        raise HTTPException(status_code=500, detail=f"Error al obtener grupos unidos: {str(e)}")
+
+
+@app.get("/api/current_user/joined_groups/{current_user_id}")
+async def get_current_user_joined_groups(current_user_id: str):
+    """Obtener los grupos a los que pertenece el usuario."""
+    try:
+        # 1. Verificar que existe el usuario
+        if current_user_id not in logged_users:
+            raise HTTPException(status_code=401, detail="Usuario no autenticado")
+            
+        current_user = logged_users[current_user_id]
+        
+        # 2. Obtener todos los grupos desde Supabase
+        if not supabase:
+            raise HTTPException(status_code=500, detail="Error en la conexión con Supabase")
+            
+        groups_response = supabase.table('groups').select('*').execute()
+        all_groups = groups_response.data if groups_response.data else []
+        
+        # 3. Obtener posibles variantes del nombre de usuario
+        username = current_user.username
+        user_data = await get_user_vector(current_user_id)
+        possible_usernames = [
+            username,
+            user_data.get('username', ''),
+            current_user_id
+        ]
+        
+        # 4. Filtrar grupos donde el usuario ya es miembro
+        joined_groups = []
+        for group in all_groups:
+            group_users = group.get("group_users", [])
+            
+            # Verificar si alguna variante del username aparece en el grupo
+            is_member = False
+            for potential_name in possible_usernames:
+                if potential_name and potential_name in group_users:
+                    is_member = True
+                    break
+            
+            # Solo incluir el grupo si el usuario ES miembro
+            if is_member:
+                joined_groups.append(group)
+        
+        # 5. Devolver los grupos a los que pertenece
+        return {
+            "joined_groups": joined_groups,
+            "count": len(joined_groups)
+        }
+        
+    except Exception as e:
+        if isinstance(e, HTTPException):
+            raise e
+        raise HTTPException(status_code=500, detail=f"Error al obtener grupos unidos: {str(e)}")
 
 
 if __name__ == '__main__':
