@@ -70,7 +70,7 @@ export default function Navigation() {
       />
 
       <Route
-        path="/groups"
+        path="/groups/:groupId"
         element={
           <PrivateRoute>
             <GroupsDetail/>

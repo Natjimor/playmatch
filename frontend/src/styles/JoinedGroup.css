@@ -12,6 +12,13 @@
     background-color: rgba(255, 255, 255, 0.799) ;
 }
 
+.group-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+}
+
 .JoinedGroupInfo{
     display: flex;
     justify-content: space-between;

@@ -1,11 +1,40 @@
-import GroupSect from "../../components/GroupsSection/GroupSection"
-import InvitationSect from "../../components/InvitationsSection/InvitationSection"
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import NavbarLog from "../../components/NavbarLog/NavbarLog"
-import ParticipantsSect from "../../components/ParticipantsSection/ParticipantsSection"
-import RecommendedSect from "../../components/RecommendationSect/RecommendationSect"
+import ParticipantsSect from "../../components/ParticipantsSection/ParticipantsSection";
+import RecommendedSect from "../../components/RecommendationSect/RecommendationSect";
+import { apiUtils } from "../../utils/apiUtils";
 import "../../styles/GroupsDetail.css"
 
 export default function GroupsDetail() {
+    const { groupId } = useParams();
+    const [group, setGroup] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    const [showRecommendationForm, setShowRecommendationForm] = useState(false);
+
+    useEffect(() => {
+        const fetchGroupDetails = async () => {
+            try {
+                setLoading(true);
+                const response = await apiUtils({
+                    url: `api/groups/${groupId}`,
+                    method: 'GET'
+                });
+                setGroup(response);
+                setError(null);
+            } catch (err) {
+                console.error("Error al obtener detalles del grupo:", err);
+                setError("No se pudo cargar la información del grupo");
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        if (groupId) {
+            fetchGroupDetails();
+        }
+    }, [groupId]);
 
     return (
         <div className="GroupDetail"
@@ -18,8 +47,27 @@ export default function GroupsDetail() {
         >
         <NavbarLog/>
         <div className='GroupDetailInfo'>
-            <ParticipantsSect/>
-            <RecommendedSect/>
+            {loading ? (
+                <div className="loading-container">
+                    <div className="loading-spinner"></div>
+                    <p>Cargando detalles del grupo...</p>
+                </div>
+            ) : error ? (
+                <div className="error-message">{error}</div>
+            ) : group ? (
+                <>
+                    <ParticipantsSect 
+                        groupUsers={group.group_users} 
+                        onShowRecommendationForm={() => setShowRecommendationForm(true)} 
+                    />
+                    <RecommendedSect 
+                        showForm={showRecommendationForm}
+                        onCloseForm={() => setShowRecommendationForm(false)}
+                    />
+                </>
+            ) : (
+                <div className="error-message">No se encontró información del grupo</div>
+            )}
         </div>
         </div>
     )

@@ -664,6 +664,47 @@ async def get_current_user_joined_groups(current_user_id: str):
         raise HTTPException(status_code=500, detail=f"Error al obtener grupos unidos: {str(e)}")
 
 
+@app.get("/api/groups/{group_id}")
+async def get_group_details(group_id: str):
+    """Obtener detalles específicos de un grupo por su ID."""
+    try:
+        # 1. Verificar que existe conexión con Supabase
+        if not supabase:
+            raise HTTPException(status_code=500, detail="No hay conexión con Supabase")
+        
+        # 2. Obtener el grupo de Supabase
+        group_response = supabase.table('groups').select('*').eq('group_id', group_id).execute()
+        
+        if not group_response.data or len(group_response.data) == 0:
+            raise HTTPException(status_code=404, detail=f"No se encontró el grupo con ID {group_id}")
+        
+        group = group_response.data[0]
+        
+        # 3. Obtener el vector del grupo
+        group_vector = None
+        try:
+            vector_result = await get_group_vector(group_id)
+            group_vector = vector_result.get('normalized_average_vector')
+        except Exception as e:
+            print(f"Error al obtener el vector del grupo: {e}")
+        
+        # 4. Devolver los detalles completos del grupo
+        return {
+            "group_id": group_id,
+            "group_name": group.get("group_name", f"Grupo {group_id}"),
+            "group_users": group.get("group_users", []),
+            "group_size": len(group.get("group_users", [])),
+            "avg_vector": group_vector,
+            "created_at": group.get("created_at"),
+            "updated_at": group.get("updated_at")
+        }
+    
+    except Exception as e:
+        if isinstance(e, HTTPException):
+            raise e
+        raise HTTPException(status_code=500, detail=f"Error al obtener detalles del grupo: {str(e)}")
+
+
 if __name__ == '__main__':
     # Ejecutar el servidor con uvicorn
     uvicorn.run("main:app", host="0.0.0.0", port=5000, reload=True)

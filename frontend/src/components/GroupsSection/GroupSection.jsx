@@ -134,6 +134,7 @@ export default function GroupSection() {
               className={`group-container ${group.isNew ? 'group-joining' : ''}`}
             >
               <JoinedGroup 
+                groupId={group.group_id}
                 groupName={group.group_name}
                 memberSize={group.group_size || (group.group_users ? group.group_users.length : 0)}
               />
