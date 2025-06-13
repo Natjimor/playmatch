@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import PlatformSelector from "../../components/Group/PlatformSelector";
-import SharedDeviceSelector from "../../components/Group/SharedDeviceSelector";
-import { guardarPreferenciasGrupo } from "./guardarPreferenciasGrupo";
-
+import PlatformSelector from "./../../components/Group/PlatformSelector"
+import SharedDeviceSelector from "./../../components/Group/SharedDeviceSelector"
+import "./Group_form.css"
 const steps = ["groupSize", "platforms", "sharedDevice"];
 
 const initialState = {
@@ -12,7 +11,7 @@ const initialState = {
 };
 function GroupRecommendationForm({ onSubmit }) {
   const [form, setForm] = useState(initialState);
-  const [step, setStep] = useState(0);
+  const [step, setStep] = useState(1);
 
   const currentStep = steps[step];
 
@@ -30,12 +29,6 @@ function GroupRecommendationForm({ onSubmit }) {
   };
 
 const handleNext = () => {
-  // Validación por paso
-  if (currentStep === "groupSize" && !form.groupSize) {
-    alert("Por favor selecciona cuántas personas jugarán.");
-    return;
-  }
-
   if (currentStep === "platforms" && form.platforms.length === 0) {
     alert("Por favor selecciona al menos una plataforma.");
     return;
