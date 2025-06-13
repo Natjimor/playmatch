@@ -3,16 +3,19 @@ import PlatformSelector from "./../../components/Group/PlatformSelector"
 import SharedDeviceSelector from "./../../components/Group/SharedDeviceSelector"
 import "./Group_form.css"
 import {guardarPreferenciasGrupo} from "./guardarPreferenciasGrupo"
+import { useAuth } from "../../context/AuthContext";
+
+
 const steps = ["platforms", "sharedDevice"];
 
 const initialState = {
-  groupSize: "",
   platforms: [],
   sharedDevice: ""
 };
 function GroupRecommendationForm({ onSubmit }) {
   const [form, setForm] = useState(initialState);
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(0);
+const { user } = useAuth();
 
   const currentStep = steps[step];
 
@@ -31,14 +34,14 @@ const handleNext = () => {
   if (step < steps.length - 1) {
     setStep(step + 1);
   } else {
-    guardarPreferenciasGrupo(form).then(res => {
-      if (res.success) {
-        console.log("Preferencias grupales guardadas exitosamente");
-        onSubmit?.(form); 
-      } else {
-        console.error("Error al guardar preferencias grupales:", res.error);
-      }
-    });
+    guardarPreferenciasGrupo(form, user).then(res => {
+  if (res.success) {
+    console.log("Preferencias grupales guardadas exitosamente");
+    onSubmit?.(form); 
+  } else {
+    console.error("Error al guardar preferencias grupales:", res.error);
+  }
+});
   }
 };
 

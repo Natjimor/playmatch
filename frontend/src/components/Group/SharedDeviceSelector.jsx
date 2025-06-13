@@ -3,17 +3,18 @@ import "./SharedDeviceSelector.css"
 
 export default function SharedDeviceSelector({ value, onChange }) {
   const options = [
-    { label: "Online multiplayer" },
-    { label: "Online Co-Op" },
-     { label: "Local Co-Op" }
-  ];
+  { label: "Online multiplayer", value: "Online multiplayer" },
+  { label: "Online Co-Op", value: "Online Co-Op" },
+  { label: "Local Co-Op", value: "Local Co-Op" }
+];
+
 
   return (
     <div id="shared-selector">
       <h2 id="title3">¿Qué tipo de experiencia buscan?</h2>
       <div id="shared-options-container">
-        {options.map((opt, index) => (
-          <label key={opt.value} id={`shared-label-${index}`}>
+       {options.map((opt, index) => (
+  <label key={opt.label} id={`shared-label-${index}`}>
             <input
               type="radio"
               name="sharedDevice"
@@ -30,3 +31,6 @@ export default function SharedDeviceSelector({ value, onChange }) {
     </div>
   );
 }
+
+
+
