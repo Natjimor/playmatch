@@ -40,33 +40,52 @@ export default function AddGroup() {
       return;
     }
 
-    if (!currentUsername) {
-      alert("Espere a que se cargue su información de usuario...");
-      return;
-    }
+    const { data: sessionData } = await supabase.auth.getUser();
+    const senderId = sessionData?.user?.id;
 
     const usernames = [currentUsername, ...selectedUsers.map((u) => u.username)];
+    const groupSize = usernames.length;
+    console.log(groupSize)
 
-    const groupSize = selectedUsers.length + 1;
-
-    const { data, error } = await supabase.from("groups").insert([
+    // 1. Crear el grupo
+  const { data: groupData, error: groupError } = await supabase
+    .from("groups")
+    .insert([
       {
         group_name: groupName,
-        group_users: usernames,
-        group_size: groupSize,
+        group_users: [currentUsername],
+        group_size: 1,
       },
-    ]);
+    ])
+    .select("group_id")
+    .single();
 
-    if (error) {
-      console.error("Error al crear grupo:", error);
-      alert("Ocurrió un error al crear el grupo.");
-    } else {
-      console.log("Grupo creado con éxito:", data);
-      setGroupName("");
-      setSelectedUsers([]);
-      setIsModalOpen(false);
+  if (!groupData || groupError) {
+    console.error("Error al crear grupo:", groupError);
+    return alert("Error al crear grupo");
+  }
+
+    // 2. Crear invitaciones
+    const invitations = selectedUsers.map((user) => ({
+      group_id: groupData.group_id,
+      sender_id: senderId,
+      receiver_id: user.id,
+      status: "pending",
+    }));
+
+    const { error: invitationError } = await supabase
+      .from("invitations")
+      .insert(invitations);
+
+    if (invitationError) {
+      console.error("Error al enviar invitaciones:", invitationError);
+      return alert("Error al enviar invitaciones");
     }
 
+    // Resetear
+    setGroupName("");
+    setSelectedUsers([]);
+    setIsModalOpen(false);
   };
 
   const [selectedUsers, setSelectedUsers] = useState([]);
